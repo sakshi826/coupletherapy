@@ -77,9 +77,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Couple Therapy — A Guided Relationship Journey" },
+      { title: "Couple Therapy: A Guided Relationship Journey" },
       { name: "description", content: "Therapist-guided tools, journeys, and insights to deepen connection, communication, and emotional intimacy together." },
-      { property: "og:title", content: "Couple Therapy — A Guided Relationship Journey" },
+      { property: "og:title", content: "Couple Therapy: A Guided Relationship Journey" },
       { property: "og:description", content: "Therapist-guided tools and pathways for couples to grow together." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

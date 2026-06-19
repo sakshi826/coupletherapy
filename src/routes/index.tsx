@@ -27,7 +27,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Couple Therapy — A Guided Relationship Journey" },
+      { title: "Couple Therapy: A Guided Relationship Journey" },
       {
         name: "description",
         content:
