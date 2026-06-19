@@ -49,8 +49,9 @@ function CoupleTherapyPage() {
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       >
         <div className="absolute -top-32 -left-24 h-[28rem] w-[28rem] rounded-full bg-rose-soft blur-3xl opacity-70" />
-        <div className="absolute top-40 -right-32 h-[32rem] w-[32rem] rounded-full bg-sage-soft blur-3xl opacity-60" />
+        <div className="absolute top-40 -right-32 h-[32rem] w-[32rem] rounded-full bg-violet-soft blur-3xl opacity-60" />
         <div className="absolute bottom-0 left-1/3 h-[28rem] w-[28rem] rounded-full bg-lavender-soft blur-3xl opacity-50" />
+        <div className="absolute top-1/2 right-1/4 h-[20rem] w-[20rem] rounded-full bg-violet/20 blur-3xl opacity-40" />
       </div>
 
       <TopBar />
