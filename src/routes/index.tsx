@@ -55,27 +55,35 @@ function CoupleTherapyPage() {
         aria-hidden
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       >
-        {/* Base jewel gradient */}
+        {/* Base pink-purple gradient */}
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(160deg, #5B2A86 0%, #8C2E7E 50%, #C2356E 100%)",
+            background: "linear-gradient(160deg, #7B2D8E 0%, #B0387C 40%, #D9468B 70%, #E85A9A 100%)",
           }}
         />
-        {/* Top-right sheen */}
+        {/* Top lightness fade */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(255,230,245,0.35) 0%, rgba(255,220,240,0.12) 35%, transparent 70%)",
+          }}
+        />
+        {/* Bottom depth fade */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(0deg, rgba(60,20,80,0.45) 0%, transparent 55%)",
+          }}
+        />
+        {/* Soft center glow */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 90% 0%, rgba(255,255,255,0.06), transparent 50%)",
-          }}
-        />
-        {/* Bottom-left sheen */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 0% 100%, rgba(255,255,255,0.05), transparent 50%)",
+              "radial-gradient(ellipse at 50% 20%, rgba(255,200,230,0.22), transparent 60%)",
           }}
         />
       </div>
