@@ -541,32 +541,24 @@ const resources = [
   {
     icon: <BookOpen className="h-5 w-5" />,
     title: "Articles",
-    count: "42 articles",
-    time: "5 to 8 min read",
     tone: "sand",
     trending: true,
   },
   {
     icon: <Lightbulb className="h-5 w-5" />,
     title: "Therapist Tips",
-    count: "28 quick tips",
-    time: "2 min read",
     tone: "sky",
     trending: false,
   },
   {
     icon: <HeartHandshake className="h-5 w-5" />,
     title: "Real Couple Stories",
-    count: "16 stories",
-    time: "8 to 12 min read",
     tone: "lavender",
     trending: true,
   },
   {
     icon: <Brain className="h-5 w-5" />,
     title: "Relationship Myths",
-    count: "12 myths debunked",
-    time: "3 min read",
     tone: "sage",
     trending: false,
   },
@@ -612,11 +604,6 @@ function ResourceLibrary() {
             <h4 className="mt-5 font-display text-2xl text-foreground">
               {r.title}
             </h4>
-            <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
-              <span>{r.count}</span>
-              <span>·</span>
-              <span>{r.time}</span>
-            </div>
             <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground">
               Explore{" "}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
