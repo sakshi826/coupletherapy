@@ -52,16 +52,17 @@ function CoupleTherapyPage() {
     <div
       className="min-h-screen relative"
       style={{
-        background: "linear-gradient(160deg, #A2347A 0%, #D9468B 35%, #F06292 65%, #F48FB1 100%)",
+        background:
+          "linear-gradient(160deg, #A2347A 0%, #D9468B 35%, #F06292 65%, #F48FB1 100%)",
       }}
     >
-      {/* Top lightness fade */}
+      {/* Strong top lightness fade */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(255,220,240,0.55) 0%, rgba(255,210,235,0.2) 40%, transparent 75%)",
+            "linear-gradient(180deg, rgba(255,240,250,0.82) 0%, rgba(255,225,240,0.45) 25%, rgba(255,210,235,0.15) 55%, transparent 85%)",
         }}
       />
       {/* Bottom depth fade */}
@@ -70,7 +71,7 @@ function CoupleTherapyPage() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(0deg, rgba(80,20,60,0.5) 0%, transparent 55%)",
+            "linear-gradient(0deg, rgba(60,15,50,0.55) 0%, rgba(80,20,60,0.18) 30%, transparent 60%)",
         }}
       />
       {/* Soft pink center glow */}
@@ -79,7 +80,7 @@ function CoupleTherapyPage() {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse at 50% 15%, rgba(255,200,225,0.35), transparent 55%)",
+            "radial-gradient(ellipse at 50% 10%, rgba(255,215,235,0.55), transparent 50%)",
         }}
       />
 
