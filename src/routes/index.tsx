@@ -27,7 +27,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Couple Therapy — A Guided Relationship Journey" },
+      { title: "Couple Therapy: A Guided Relationship Journey" },
       {
         name: "description",
         content:
@@ -130,7 +130,7 @@ function Hero() {
             </h1>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Strengthen communication, deepen emotional intimacy, and build a
-              healthier relationship together — guided by evidence-based
+              healthier relationship together, guided by evidence-based
               therapy.
             </p>
 
@@ -820,7 +820,7 @@ function TherapistCorner() {
           </h4>
           <p className="mt-2 text-sm text-muted-foreground">
             Our pathways draw from the Gottman Method, Emotionally Focused
-            Therapy, and Attachment Theory — translated into practices that
+            Therapy, and Attachment Theory, translated into practices that
             fit real life.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
@@ -873,7 +873,7 @@ function Footer() {
         <Heart className="h-3.5 w-3.5 text-rose" />
         Made with care for couples growing together
       </div>
-      <div>This is wellness content — not a substitute for professional therapy.</div>
+      <div>This is wellness content, not a substitute for professional therapy.</div>
     </div>
   );
 }

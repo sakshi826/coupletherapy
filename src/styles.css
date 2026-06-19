@@ -80,7 +80,7 @@
   --input: oklch(0.92 0.025 340);
   --ring: oklch(0.6 0.17 350);
 
-  /* Couples accent palette — rose / pink / purple */
+  /* Couples accent palette: rose / pink / purple */
   --sage: oklch(0.66 0.16 355);          /* hot rose (was sage) */
   --sage-soft: oklch(0.95 0.035 355);
   --rose: oklch(0.7 0.17 15);            /* warm coral-rose */
