@@ -55,19 +55,19 @@ function CoupleTherapyPage() {
         aria-hidden
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       >
-        {/* Base pink-purple gradient */}
+        {/* Base pink gradient */}
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(160deg, #7B2D8E 0%, #B0387C 40%, #D9468B 70%, #E85A9A 100%)",
+            background: "linear-gradient(160deg, #A2347A 0%, #D9468B 35%, #F06292 65%, #F48FB1 100%)",
           }}
         />
-        {/* Top lightness fade */}
+        {/* Stronger top lightness fade */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(255,230,245,0.35) 0%, rgba(255,220,240,0.12) 35%, transparent 70%)",
+              "linear-gradient(180deg, rgba(255,220,240,0.55) 0%, rgba(255,210,235,0.2) 40%, transparent 75%)",
           }}
         />
         {/* Bottom depth fade */}
@@ -75,15 +75,15 @@ function CoupleTherapyPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(0deg, rgba(60,20,80,0.45) 0%, transparent 55%)",
+              "linear-gradient(0deg, rgba(80,20,60,0.5) 0%, transparent 55%)",
           }}
         />
-        {/* Soft center glow */}
+        {/* Soft pink center glow */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse at 50% 20%, rgba(255,200,230,0.22), transparent 60%)",
+              "radial-gradient(ellipse at 50% 15%, rgba(255,200,225,0.35), transparent 55%)",
           }}
         />
       </div>
