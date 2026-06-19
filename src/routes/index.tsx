@@ -593,8 +593,8 @@ function ResourceLibrary() {
   };
   return (
     <Section
-      title="Read, listen, and reflect"
-      desc="Hand-picked by therapists and updated every week."
+      title="Read and Reflect"
+      desc="Curated articles, stories, and insights to grow closer together."
     >
       <div className="grid gap-4 sm:grid-cols-2">
         {resources.map((r) => (
