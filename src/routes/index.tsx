@@ -13,7 +13,7 @@ import {
   BookOpen,
   Lightbulb,
   Brain,
-  Flame,
+  Brain,
   ChevronRight,
   Sparkles,
   Users,
@@ -303,7 +303,7 @@ function ActivityCard({
         <ArrowRight className="mt-2 h-5 w-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-foreground" />
       </div>
       <h4 className="relative mt-6 font-display text-lg text-foreground">{title}</h4>
-      <p className="relative mt-1 flex-1 text-sm leading-relaxed text-muted-foreground">
+      <p className="relative mt-1 flex-1 text-sm leading-relaxed text-foreground">
         {desc}
       </p>
     </a>
@@ -349,7 +349,7 @@ function AlignmentCard({
           <h4 className="font-display text-lg text-foreground">{title}</h4>
           <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
         </div>
-        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-1 text-sm leading-relaxed text-foreground">
           {desc}
         </p>
       </div>
@@ -585,7 +585,7 @@ function SeriesRow({
         <div className="truncate text-sm font-semibold text-foreground">
           {title}
         </div>
-        <div className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+        <div className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-foreground">
           {desc}
         </div>
       </div>
@@ -641,7 +641,7 @@ function RelationshipTools() {
           <h2 className="font-display text-3xl text-foreground sm:text-4xl">
             Start Your Journey Together
           </h2>
-          <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-1 max-w-2xl text-sm leading-relaxed text-foreground">
             Four therapist-designed rituals to deepen your connection, one day at a time.
           </p>
         </div>
@@ -675,7 +675,7 @@ function RelationshipTools() {
               <h4 className="mt-6 font-display text-xl text-foreground">
                 {t.title}
               </h4>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-1 text-sm leading-relaxed text-foreground">
                 {t.desc}
               </p>
             </div>
@@ -781,7 +781,7 @@ function Section({
           {title}
         </h2>
         {desc && (
-          <p className="mt-1 max-w-2xl text-sm text-muted-foreground">{desc}</p>
+          <p className="mt-1 max-w-2xl text-sm text-foreground">{desc}</p>
         )}
       </div>
       {children}
