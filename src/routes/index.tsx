@@ -53,7 +53,7 @@ function CoupleTherapyPage() {
       {/* Premium pink-purple ambient background */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
       >
         {/* Rich gradient base */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_oklch(0.82_0.14_340)_0%,_oklch(0.88_0.10_350)_35%,_oklch(0.84_0.12_310)_70%,_oklch(0.90_0.06_330)_100%)]" />
