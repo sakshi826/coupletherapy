@@ -311,7 +311,7 @@ function CommunicationAlignment() {
     >
       <div className="grid gap-4 sm:grid-cols-2">
         {items.map((i) => (
-          <ActivityCard key={i.title} {...i} />
+          <AlignmentCard key={i.title} {...i} />
         ))}
       </div>
     </Section>
