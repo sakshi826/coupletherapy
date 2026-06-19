@@ -112,6 +112,22 @@ const toneStyles: Record<Tone, string> = {
   sky: "bg-sky-soft text-sky",
 };
 
+const toneGradients: Record<Tone, string> = {
+  rose: "from-rose-soft to-card",
+  sage: "from-sage-soft to-card",
+  lavender: "from-lavender-soft to-card",
+  sand: "from-sand-soft to-card",
+  sky: "from-sky-soft to-card",
+};
+
+const toneIconCard: Record<Tone, string> = {
+  rose: "bg-card text-rose",
+  sage: "bg-card text-sage",
+  lavender: "bg-card text-lavender",
+  sand: "bg-card text-sand",
+  sky: "bg-card text-sky",
+};
+
 function ActivityCard({
   icon,
   title,
@@ -126,11 +142,11 @@ function ActivityCard({
   return (
     <a
       href="#"
-      className="group flex flex-col rounded-2xl border border-border bg-card p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card"
+      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${toneGradients[tone]} p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
     >
       <div className="flex items-start justify-between">
         <div
-          className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${toneStyles[tone]}`}
+          className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl shadow-soft ${toneIconCard[tone]}`}
         >
           {icon}
         </div>
@@ -145,6 +161,7 @@ function ActivityCard({
     </a>
   );
 }
+
 
 /* ---------------------- Section 1: Emotional Connection ---------------------- */
 
@@ -349,10 +366,10 @@ function SeriesRow({
   return (
     <a
       href="#"
-      className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card"
+      className={`group flex items-center gap-4 overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${toneGradients[tone]} p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
     >
       <div
-        className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${toneStyles[tone]}`}
+        className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl shadow-soft ${toneIconCard[tone]}`}
       >
         {icon}
       </div>
@@ -408,11 +425,11 @@ function RelationshipTools() {
         {tools.map((t) => (
           <div
             key={t.title}
-            className="group rounded-2xl border border-border bg-card p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card sm:p-6"
+            className={`group relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${toneGradients[t.tone]} p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card sm:p-6`}
           >
             <div className="flex items-start justify-between">
               <div
-                className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${toneStyles[t.tone]}`}
+                className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl shadow-soft ${toneIconCard[t.tone]}`}
               >
                 {t.icon}
               </div>
