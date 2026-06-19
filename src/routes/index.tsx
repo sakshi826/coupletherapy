@@ -14,7 +14,6 @@ import {
   Lightbulb,
   Brain,
   ChevronRight,
-  ChevronRight,
   Sparkles,
   Users,
   Target,
