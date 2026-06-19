@@ -488,38 +488,32 @@ const tools: { icon: React.ReactNode; title: string; desc: string; tone: Tone }[
 
 function RelationshipTools() {
   return (
-    <section className="relative mt-10 sm:mt-14">
-      <div className="relative overflow-hidden rounded-[32px] border border-border/60 bg-gradient-to-b from-secondary/40 to-background p-6 sm:p-10">
-        {/* Decorative soft blobs */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-rose-soft blur-3xl opacity-50"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-sage-soft blur-3xl opacity-40"
-        />
+    <section className="relative -mx-5 mt-10 overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-background px-5 pt-10 pb-14 sm:-mx-8 sm:mt-14 sm:px-8 sm:pt-14 sm:pb-20">
+      {/* Soft full-width background blobs */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-0 left-1/4 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-rose-soft blur-3xl opacity-40"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-1/3 h-[24rem] w-[24rem] rounded-full bg-sage-soft blur-3xl opacity-30"
+      />
 
-        {/* Header */}
-        <div className="relative mb-8 flex flex-col items-center text-center sm:mb-10">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground ring-1 ring-border">
-            <Sparkles className="h-3 w-3 text-rose" />
-            Daily Practices
-          </span>
-          <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
+      <div className="relative mx-auto max-w-6xl">
+        <div className="mb-8 flex flex-col gap-1 sm:mb-10">
+          <h2 className="font-display text-3xl text-foreground sm:text-4xl">
             Start Your Journey Together
           </h2>
-          <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted-foreground">
-            Four therapist-designed rituals to deepen connection, one day at a time.
+          <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Four therapist-designed rituals to deepen your connection, one day at a time.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="relative grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2">
           {tools.map((t) => (
             <div
               key={t.title}
-              className="group relative isolate overflow-hidden rounded-[24px] border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7"
+              className={`group relative isolate overflow-hidden rounded-[28px] border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7`}
             >
               <span
                 aria-hidden
