@@ -56,15 +56,11 @@ function CoupleTherapyPage() {
       <TopBar />
 
       <main className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
-        <Hero />
         <ContinueJourney />
         <Roadmap />
         <NextSteps />
         <RelationshipTools />
-        <Insights />
         <ResourceLibrary />
-        <Milestones />
-        <TherapistCorner />
         <Footer />
       </main>
     </div>
