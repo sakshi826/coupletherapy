@@ -13,7 +13,7 @@ import {
   BookOpen,
   Lightbulb,
   Brain,
-  Brain,
+  ChevronRight,
   ChevronRight,
   Sparkles,
   Users,
