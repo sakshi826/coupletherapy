@@ -27,7 +27,6 @@ import {
   UserMinus,
   Flame as FlameIcon,
   UserX,
-  AlertOctagon,
   Crosshair,
   CircleDot,
 } from "lucide-react";
@@ -317,12 +316,6 @@ function GuidedSeries() {
           title: "Loving Someone But Feeling Lonely",
           desc: "Navigate emotional loneliness within a loving relationship.",
           tone: "sage",
-        },
-        {
-          icon: <AlertOctagon className="h-4 w-4" />,
-          title: "When Relationships Reach Breaking Point",
-          desc: "Identify critical thresholds and decide next steps.",
-          tone: "lavender",
         },
       ],
     },
