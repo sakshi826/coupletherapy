@@ -128,6 +128,31 @@ const toneIconCard: Record<Tone, string> = {
   sky: "bg-card text-sky",
 };
 
+const toneBlob: Record<Tone, string> = {
+  rose: "bg-rose/30",
+  sage: "bg-sage/30",
+  lavender: "bg-lavender/30",
+  sand: "bg-sand/30",
+  sky: "bg-sky/30",
+};
+
+const toneStripe: Record<Tone, string> = {
+  rose: "bg-rose",
+  sage: "bg-sage",
+  lavender: "bg-lavender",
+  sand: "bg-sand",
+  sky: "bg-sky",
+};
+
+const toneRing: Record<Tone, string> = {
+  rose: "ring-rose/40",
+  sage: "ring-sage/40",
+  lavender: "ring-lavender/40",
+  sand: "ring-sand/40",
+  sky: "ring-sky/40",
+};
+
+/* Section 2 style: warm card with a decorative blurred blob + ringed icon */
 function ActivityCard({
   icon,
   title,
@@ -142,25 +167,67 @@ function ActivityCard({
   return (
     <a
       href="#"
-      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${toneGradients[tone]} p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
+      className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card"
     >
-      <div className="flex items-start justify-between">
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full blur-2xl transition-opacity duration-500 ${toneBlob[tone]} opacity-60 group-hover:opacity-100`}
+      />
+      <div className="relative flex items-start justify-between">
         <div
-          className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl shadow-soft ${toneIconCard[tone]}`}
+          className={`inline-flex h-14 w-14 items-center justify-center rounded-full ring-8 ${toneRing[tone]} ${toneStyles[tone]}`}
         >
           {icon}
         </div>
-        <button className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors group-hover:bg-foreground group-hover:text-background">
-          <ArrowRight className="h-4 w-4" />
-        </button>
+        <ArrowRight className="mt-2 h-5 w-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-foreground" />
       </div>
-      <h4 className="mt-5 font-display text-lg text-foreground">{title}</h4>
-      <p className="mt-1 flex-1 text-sm leading-relaxed text-muted-foreground">
+      <h4 className="relative mt-6 font-display text-lg text-foreground">{title}</h4>
+      <p className="relative mt-1 flex-1 text-sm leading-relaxed text-muted-foreground">
         {desc}
       </p>
     </a>
   );
 }
+
+/* Section 3 style: clean card with a vertical accent stripe on the left */
+function AlignmentCard({
+  icon,
+  title,
+  desc,
+  tone,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  tone: Tone;
+}) {
+  return (
+    <a
+      href="#"
+      className="group relative flex gap-4 overflow-hidden rounded-2xl border border-border bg-card p-5 pl-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card"
+    >
+      <span
+        aria-hidden
+        className={`absolute left-0 top-0 h-full w-1.5 ${toneStripe[tone]} transition-all group-hover:w-2`}
+      />
+      <div
+        className={`mt-0.5 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 border-current/20 ${toneStyles[tone]}`}
+      >
+        {icon}
+      </div>
+      <div className="flex-1">
+        <div className="flex items-start justify-between gap-3">
+          <h4 className="font-display text-lg text-foreground">{title}</h4>
+          <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
+        </div>
+        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+          {desc}
+        </p>
+      </div>
+    </a>
+  );
+}
+
 
 
 /* ---------------------- Section 1: Emotional Connection ---------------------- */
