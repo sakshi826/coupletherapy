@@ -171,6 +171,7 @@ function CoupleTherapyPage() {
         <TopBar />
 
         <main className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8">
+          <JourneyProgress />
           <RelationshipTools />
           <EmotionalConnection />
           <CommunicationAlignment />
