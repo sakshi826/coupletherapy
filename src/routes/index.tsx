@@ -49,44 +49,39 @@ export const Route = createFileRoute("/")({
 
 function CoupleTherapyPage() {
   return (
-    <div className="min-h-screen relative">
-      {/* Jewel gradient + sheen background */}
+    <div
+      className="min-h-screen relative"
+      style={{
+        background: "linear-gradient(160deg, #A2347A 0%, #D9468B 35%, #F06292 65%, #F48FB1 100%)",
+      }}
+    >
+      {/* Top lightness fade */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
-      >
-        {/* Base pink gradient */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(160deg, #A2347A 0%, #D9468B 35%, #F06292 65%, #F48FB1 100%)",
-          }}
-        />
-        {/* Stronger top lightness fade */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(255,220,240,0.55) 0%, rgba(255,210,235,0.2) 40%, transparent 75%)",
-          }}
-        />
-        {/* Bottom depth fade */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(0deg, rgba(80,20,60,0.5) 0%, transparent 55%)",
-          }}
-        />
-        {/* Soft pink center glow */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse at 50% 15%, rgba(255,200,225,0.35), transparent 55%)",
-          }}
-        />
-      </div>
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(255,220,240,0.55) 0%, rgba(255,210,235,0.2) 40%, transparent 75%)",
+        }}
+      />
+      {/* Bottom depth fade */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(0deg, rgba(80,20,60,0.5) 0%, transparent 55%)",
+        }}
+      />
+      {/* Soft pink center glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse at 50% 15%, rgba(255,200,225,0.35), transparent 55%)",
+        }}
+      />
 
       <div className="relative z-10">
         <TopBar />
