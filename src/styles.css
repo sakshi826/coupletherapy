@@ -51,43 +51,43 @@
 :root {
   --radius: 1rem;
 
-  /* Warm neutral wellness palette */
-  --background: oklch(0.985 0.008 80);
-  --foreground: oklch(0.22 0.025 35);
+  /* Romantic rose / pink-purple palette */
+  --background: oklch(0.985 0.012 350);
+  --foreground: oklch(0.24 0.04 340);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.025 35);
+  --card-foreground: oklch(0.24 0.04 340);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.025 35);
+  --popover-foreground: oklch(0.24 0.04 340);
 
-  --primary: oklch(0.55 0.08 155); /* sage primary */
-  --primary-foreground: oklch(0.99 0.005 80);
+  --primary: oklch(0.6 0.17 350); /* rose-pink primary */
+  --primary-foreground: oklch(0.99 0.005 350);
 
-  --secondary: oklch(0.95 0.015 80);
-  --secondary-foreground: oklch(0.3 0.03 35);
+  --secondary: oklch(0.95 0.025 340);
+  --secondary-foreground: oklch(0.32 0.06 340);
 
-  --muted: oklch(0.95 0.012 80);
-  --muted-foreground: oklch(0.5 0.02 40);
+  --muted: oklch(0.95 0.02 340);
+  --muted-foreground: oklch(0.52 0.04 340);
 
-  --accent: oklch(0.92 0.03 25); /* dusty rose */
-  --accent-foreground: oklch(0.3 0.05 25);
+  --accent: oklch(0.9 0.06 320); /* soft lavender-pink */
+  --accent-foreground: oklch(0.32 0.09 320);
 
-  --destructive: oklch(0.6 0.2 25);
-  --destructive-foreground: oklch(0.99 0.005 80);
+  --destructive: oklch(0.6 0.22 20);
+  --destructive-foreground: oklch(0.99 0.005 350);
 
-  --border: oklch(0.92 0.015 70);
-  --input: oklch(0.92 0.015 70);
-  --ring: oklch(0.55 0.08 155);
+  --border: oklch(0.92 0.025 340);
+  --input: oklch(0.92 0.025 340);
+  --ring: oklch(0.6 0.17 350);
 
-  /* Wellness accent palette */
-  --sage: oklch(0.62 0.07 155);
-  --sage-soft: oklch(0.94 0.03 155);
-  --rose: oklch(0.7 0.1 20);
-  --rose-soft: oklch(0.94 0.035 20);
-  --lavender: oklch(0.65 0.09 295);
-  --lavender-soft: oklch(0.94 0.03 295);
-  --sand: oklch(0.78 0.07 75);
+  /* Couples accent palette — rose / pink / purple */
+  --sage: oklch(0.66 0.16 355);          /* hot rose (was sage) */
+  --sage-soft: oklch(0.95 0.035 355);
+  --rose: oklch(0.7 0.17 15);            /* warm coral-rose */
+  --rose-soft: oklch(0.95 0.04 15);
+  --lavender: oklch(0.62 0.16 310);      /* pink-purple */
+  --lavender-soft: oklch(0.95 0.035 310);
+  --sand: oklch(0.78 0.1 25);
   --sand-soft: oklch(0.95 0.035 75);
   --sky: oklch(0.7 0.08 230);
   --sky-soft: oklch(0.94 0.03 230);
