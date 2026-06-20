@@ -1,4 +1,9 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
+import {
+  Heart, HandHeart, RefreshCcw, ShieldCheck, MessageCircle, Compass, Scale, Baby,
+  Users, Crosshair, Mail, PenLine, UserMinus, FlameIcon, UserX,
+  Star, TrendingUp, BookOpen, Lightbulb, HeartHandshake, Brain,
+} from "lucide-react";
 
 export const Route = createFileRoute("/")({
   beforeLoad: () => {
