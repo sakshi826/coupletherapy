@@ -174,6 +174,7 @@ export function CoupleTherapyPage() {
   const scrollY = useParallaxScroll();
 
   return (
+    <ActivityFrameProvider>
     <div
       className="group/page min-h-screen relative overflow-hidden font-sans"
       style={{
