@@ -348,13 +348,22 @@ function ActivityCard({
   tone: Tone;
   href?: string;
 }) {
-  const isExternal = href.startsWith("http");
+  const isMantra = /app\.mantracare\.org/.test(href);
+  const isExternal = href.startsWith("http") && !isMantra;
+  const { open } = useActivityFrame();
+  const onClick = (e: React.MouseEvent) => {
+    if (isMantra) {
+      e.preventDefault();
+      open({ title, url: href });
+    }
+  };
   return (
     <a
       href={href}
+      onClick={onClick}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card hover:ring-1 hover:ring-primary/30"
+      className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card hover:ring-1 hover:ring-primary/30 cursor-pointer"
     >
       <span
         aria-hidden
