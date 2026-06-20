@@ -93,14 +93,6 @@ function ActivityFrameProvider({ children }: { children: React.ReactNode }) {
                   {target.title}
                 </h3>
               </div>
-              <a
-                href={target.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-[#A2347A] ring-1 ring-[#A2347A]/15 transition hover:bg-white sm:inline-flex"
-              >
-                Open in new tab <ExternalLink className="h-3.5 w-3.5" />
-              </a>
               <button
                 onClick={close}
                 aria-label="Close activity"
