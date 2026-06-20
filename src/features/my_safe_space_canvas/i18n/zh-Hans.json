@@ -1,0 +1,150 @@
+{
+  "app_title": "安全空间画布",
+  "step_label": "第5步中的{{current}}",
+  "welcome": {
+    "title": "你的安全港在等待",
+    "description": "通过一系列温和的创意提示，打造属于你自己的避风港。一块空白的画布，承载你的思想和情感。",
+    "benefits": [
+      "通过色彩表达自己",
+      "创建一个视觉上的接地工具",
+      "安全、私密且个人化"
+    ],
+    "duration": "10-15分钟",
+    "view_past": "查看往昔的拼贴画"
+  },
+  "canvas": {
+    "prompts": [
+      {
+        "quote": "你安全的地方的天空是什么样子？描绘它的颜色、光线或感觉。",
+        "button": "我加了天空→",
+        "hint": "没有正确的方法——任何标记都足够。"
+      },
+      {
+        "quote": "地面是什么感觉？草地、沙子、水、木地板？把它加到天空下面。",
+        "button": "我已经加了地线→",
+        "hint": "想想你脚在这里的感觉。"
+      },
+      {
+        "quote": "再加一件属于这里的东西——一棵树、一把椅子、一扇窗户、一只宠物、一盏灯。任何感觉对的。",
+        "button": "我加了点→",
+        "hint": "它不必看起来完美。只要感觉真实就行。"
+      },
+      {
+        "quote": "是什么给这个地方带来温暖或安慰？一盏灯、一堆火、一缕阳光、一条毯子？随心所欲地添加。",
+        "button": "我加了暖气→",
+        "hint": "哪怕是一点点颜色也很重要。"
+      },
+      {
+        "quote": "最后——添加3到5个属于这里的词。点击你的画作，可以把它们放到任何地方。",
+        "button": "这是我的话→",
+        "hint": ""
+      }
+    ],
+    "word_chips": [
+      "和平",
+      "首页",
+      "天堂",
+      "平静",
+      "温暖",
+      "够了",
+      "温柔",
+      "安全"
+    ],
+    "custom_word_placeholder": "+ 你自己的",
+    "skip_prompt": "跳过此提示",
+    "type_here": "请在此输入"
+  },
+  "save": {
+    "title": "保护你的安全空间",
+    "desc": "给你的创作起个名字，并做个简短的反思。",
+    "preview_alt": "你的安全空间拼贴",
+    "generating_preview": "正在生成预览......",
+    "name_label": "你叫这个地方什么？",
+    "name_placeholder": "例如，《我的星期天草地》",
+    "reflection_label": "这个地方为什么重要？（可选）",
+    "reflection_placeholder": "一句温柔的话......",
+    "privacy_note": "这些内容保持私密——只有你和你的治疗师能看到。",
+    "button": "拯救我的安全之地",
+    "default_name": "我的安全之地"
+  },
+  "grounding": {
+    "title": "你来了。你安全了。",
+    "breathe_info": "4 ·保持·4 ·放手 ·6",
+    "done_message": "今天能为自己而来，真是太棒了。",
+    "durations": [
+      {
+        "label": "1分钟",
+        "seconds": "60"
+      },
+      {
+        "label": "3分钟",
+        "seconds": "180"
+      },
+      {
+        "label": "5分钟",
+        "seconds": "300"
+      }
+    ],
+    "phases": [
+      "吸气",
+      "停",
+      "放手"
+    ]
+  },
+  "history": {
+    "title": "过去的安全地点",
+    "no_collages": "还没有保存拼贴。完成活动可以保存你的第一个。"
+  },
+  "common": {
+    "get_started": "Get Started",
+    "start_over": "重新开始",
+    "finish_exit": "终点与退场",
+    "well_done": "Well Done!",
+    "completion_message": "You've successfully completed this activity. Take a moment to appreciate your progress.",
+    "time_to_complete": "时间到了完成",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "loading": "Loading...",
+    "share": "分享",
+    "share_progress": "分享进度",
+    "inspire_others": "今天激励他人",
+    "share_text": "我在 TherapyMantra 上完成了这个 {{activityName}} 活动，非常喜欢，你也试试吧，只需点击链接下载安卓应用 {{androidUrl}} 或 iOS 应用 {{iosUrl}}。",
+    "this_activity": "这项活动",
+    "copied": "已复制！",
+    "copy_message": "复制消息",
+    "yes": "Yes",
+    "no": "No",
+    "date": "Date",
+    "continue": "Continue",
+    "step_of": "Step {{current}} of {{total}}",
+    "round_of": "Round {{current}} of {{total}}",
+    "phase_label": "Phase",
+    "rounds_selector": "{{count}} Rounds",
+    "instruction_ready": "Set your rounds and tap play to begin",
+    "instruction_running": "Follow the circle to regulate your breath"
+  },
+  "app_description": "安全空间画布",
+  "more": "更多的",
+  "breadcrumb": "面包屑",
+  "previous_slide": "上一张幻灯片",
+  "next_slide": "下一张幻灯片",
+  "close": "关闭",
+  "previous": "以前的",
+  "more_pages": "更多页面",
+  "pagination": "分页",
+  "go_to_previous_page": "返回上一页",
+  "go_to_next_page": "前往下一页",
+  "toggle_sidebar": "切换侧边栏",
+  "oops_page_not_found": "糟糕！页面未找到",
+  "return_to_home": "返回首页",
+  "phase_label": "Phase",
+  "instruction_ready": "Set your rounds and tap play to begin",
+  "instruction_running": "Follow the circle to regulate your breath",
+  "round_x_of_y": "Round {{current}} of {{total}}",
+  "rounds_selector": "{{count}} Rounds",
+  "yes": "Yes",
+  "no": "No",
+  "date": "Date",
+  "continue": "Continue"
+}

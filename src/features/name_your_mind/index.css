@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  :root {
+    --background: 30 30% 93%;
+    --foreground: 240 10% 25%;
+    --card: 30 25% 96%;
+    --card-foreground: 240 10% 25%;
+    --popover: 30 25% 96%;
+    --popover-foreground: 240 10% 25%;
+    --primary: 250 30% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 82%;
+    --secondary-foreground: 240 10% 25%;
+    --muted: 30 15% 88%;
+    --muted-foreground: 240 6% 50%;
+    --accent: 210 45% 72%;
+    --accent-foreground: 240 10% 20%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 250 30% 62%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer utilities {
+  .screen-transition-enter {
+    animation: screenFadeIn 0.6s ease-out forwards;
+  }
+  .screen-transition-exit {
+    animation: screenFadeOut 0.4s ease-in forwards;
+  }
+}
+
+@keyframes screenFadeIn {
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes screenFadeOut {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-12px); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
+  50% { transform: translate(-50%, -50%) scale(1.35); opacity: 0.18; }
+}
+
+@keyframes breatheRing {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.05; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.12; }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+.animate-gentle-pulse {
+  animation: gentlePulse 3s ease-in-out infinite;
+}

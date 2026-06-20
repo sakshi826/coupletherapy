@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-popover: var(--popover);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --animate-fade-in: fadeSlideIn 0.5s ease-in-out forwards;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-in;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+
+
+
+
+@layer base {
+  :root {
+
+    /* Pastel palette for grounding cards */
+    --pastel-teal: 168 35% 82%;
+    --pastel-teal-deep: 168 35% 62%;
+    --pastel-lavender: 260 35% 85%;
+    --pastel-lavender-deep: 260 30% 65%;
+    --pastel-peach: 20 60% 87%;
+    --pastel-peach-deep: 20 50% 67%;
+    --pastel-mint: 145 35% 82%;
+    --pastel-mint-deep: 145 30% 60%;
+    --pastel-blue: 210 45% 85%;
+    --pastel-blue-deep: 210 40% 65%;
+    --pastel-rose: 340 40% 87%;
+    --pastel-rose-deep: 340 35% 67%;
+    --pastel-sage: 100 25% 82%;
+    --pastel-sage-deep: 100 25% 60%;
+    --pastel-coral: 10 55% 85%;
+    --pastel-coral-deep: 10 45% 65%;
+    --pastel-sky: 195 45% 84%;
+    --pastel-sky-deep: 195 40% 62%;
+    --pastel-mauve: 290 25% 85%;
+    --pastel-mauve-deep: 290 22% 65%;
+    --pastel-sand: 40 40% 86%;
+    --pastel-sand-deep: 40 35% 66%;
+
+    --shadow-soft: 0 4px 20px -4px hsl(220 15% 20% / 0.08);
+    --shadow-card: 0 2px 12px -2px hsl(220 15% 20% / 0.06);
+    --shadow-elevated: 0 8px 30px -6px hsl(220 15% 20% / 0.12);
+  }
+
+  .dark {
+
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    
+    color: hsl(var(--foreground));
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+}
+
+/* Breathing concentric circles animation */
+@keyframes breathe-in-out {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.08;
+  }
+}
+
+.breathing-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid hsl(var(--pastel-sage-deep) / 0.25);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: breathe-in-out 6s ease-in-out infinite;
+}
+
+/* Step slide transition */
+@keyframes step-enter {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.step-enter {
+  animation: step-enter 0.4s ease-out forwards;
+}

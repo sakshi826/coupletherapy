@@ -1,0 +1,164 @@
+import { useState, useCallback, useEffect } from "react";
+import ScreenEntry from "@/features/write_your_narrative/components/narrative/ScreenEntry";
+import ScreenWriting from "@/features/write_your_narrative/components/narrative/ScreenWriting";
+import ScreenLanding from "@/features/write_your_narrative/components/narrative/ScreenLanding";
+import ScreenPastEntries from "@/features/write_your_narrative/components/narrative/ScreenPastEntries";
+import { PremiumLayout } from "@/components/shared/PremiumLayout";
+import { PremiumComplete } from "@/components/shared/PremiumComplete";
+import { BookOpen, History, Save } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { neon } from "@neondatabase/serverless";
+import { toast } from "sonner";
+import { motion, AnimatePresence } from "framer-motion";
+
+const DATABASE_URL = import.meta.env.VITE_DATABASE_URL;
+
+type Screen = "entry" | "writing" | "landing" | "history" | "complete";
+
+interface SavedEntry {
+  writing: string;
+  reflection: string;
+  date: string;
+}
+
+const WritingNarrative = () => {
+  const { t } = useTranslation();
+  const [screen, setScreen] = useState<Screen>("entry");
+  const [writing, setWriting] = useState("");
+  const [reflection, setReflection] = useState("");
+  const [entries, setEntries] = useState<SavedEntry[]>([]);
+  const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    fetchEntries();
+  }, []);
+
+  const fetchEntries = async () => {
+    const userId = sessionStorage.getItem("user_id");
+    if (!userId || !DATABASE_URL) return;
+    try {
+      const sql = neon(DATABASE_URL);
+      const rows = await sql`SELECT narrative_data FROM write_your_narrative_entries WHERE user_id = ${userId} ORDER BY created_at DESC`;
+      setEntries(rows.map(r => r.narrative_data as SavedEntry));
+    } catch (error) {
+      console.error("Failed to fetch entries:", error);
+    }
+  };
+
+  const goTo = useCallback((next: Screen) => {
+    setScreen(next);
+  }, []);
+
+  const saveEntry = useCallback(async () => {
+    const userId = sessionStorage.getItem("user_id");
+    if (!userId || !DATABASE_URL) {
+      toast.error((typeof t !== "undefined" ? t : (k) => k)("toasts.auth_error"));
+      return;
+    }
+
+    setIsSaving(true);
+    const entry: SavedEntry = {
+      writing,
+      reflection,
+      date: new Date().toLocaleDateString("en-US", {
+        month: "short", day: "numeric", year: "numeric",
+      }),
+    };
+
+    try {
+      const sql = neon(DATABASE_URL);
+      await sql`INSERT INTO write_your_narrative_entries (user_id, narrative_data) VALUES (${userId}, ${entry})`;
+      toast.success((typeof t !== "undefined" ? t : (k) => k)("toasts.save_success"));
+      setEntries(prev => [entry, ...prev]);
+      setWriting("");
+      setReflection("");
+      goTo("complete");
+    } catch (error) {
+      console.error("Failed to save narrative:", error);
+      toast.error((typeof t !== "undefined" ? t : (k) => k)("toasts.save_error"));
+    } finally {
+      setIsSaving(false);
+    }
+  }, [writing, reflection, goTo, t]);
+
+  if (screen === "complete") {
+    return (
+      <PremiumComplete
+        title={(typeof t !== "undefined" ? t : (k) => k)("app_title")}
+        message={(typeof t !== "undefined" ? t : (k) => k)("complete.message")}
+        onRestart={() => setScreen("entry")}
+      />
+    );
+  }
+
+  const titles: Record<string, string> = (typeof t !== "undefined" ? t : (k) => k)("nav", { returnObjects: true }) as Record<string, string>;
+
+  return (
+    <PremiumLayout
+      title={(typeof t !== "undefined" ? t : (k) => k)("app_title")}
+      subtitle={titles[screen]}
+      icon={<BookOpen className="w-6 h-6 text-primary" />}
+      onBack={screen !== "entry" ? () => setScreen("entry") : undefined}
+      exitOnBack={screen === "entry"}
+      actions={screen === "entry" ? (
+        <button onClick={() => setScreen("history")} className="p-2 rounded-full hover:bg-slate-100 transition-colors text-slate-600">
+          <History size={20} />
+        </button>
+      ) : undefined}
+    >
+      <div className="w-full max-w-md mx-auto flex flex-col px-6 py-4 min-h-[70vh]" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif' }}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={screen}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex-1 flex flex-col"
+          >
+            {screen === "entry" && (
+              <ScreenEntry
+                onContinue={() => goTo("writing")}
+                onBack={() => {}} // Rely on PremiumLayout header back
+                onHistory={() => goTo("history")}
+              />
+            )}
+            {screen === "writing" && (
+              <ScreenWriting
+                writing={writing}
+                setWriting={setWriting}
+                onContinue={() => goTo("landing")}
+              />
+            )}
+            {screen === "landing" && (
+              <div className="flex-1 flex flex-col gap-8 py-8">
+                <ScreenLanding
+                  reflection={reflection}
+                  setReflection={setReflection}
+                  onSave={saveEntry}
+                  onFinish={() => goTo("entry")}
+                />
+                <button
+                  onClick={saveEntry}
+                  disabled={isSaving}
+                  className="w-full bg-slate-900 text-white py-5 rounded-2xl font-black text-lg shadow-2xl shadow-slate-900/20 hover:bg-slate-800 transition-all flex items-center justify-center gap-3"
+                >
+                  <Save size={20} strokeWidth={3} />
+                  {isSaving ? (typeof t !== "undefined" ? t : (k) => k)("landing.button_preserving") : (typeof t !== "undefined" ? t : (k) => k)("landing.button_save")}
+                </button>
+              </div>
+            )}
+            {screen === "history" && (
+              <ScreenPastEntries
+                entries={entries}
+                onBack={() => goTo("entry")}
+              />
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </PremiumLayout>
+  );
+};
+
+export default WritingNarrative;

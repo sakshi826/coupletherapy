@@ -1,0 +1,105 @@
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { useEnergy } from "../context/EnergyContext";
+import { Check, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { PremiumLayout } from "../../../components/shared/PremiumLayout";
+
+const EnergyFactors = () => {
+  const { t } = useTranslation();
+  const { currentFactors, setCurrentFactors, currentNote, setCurrentNote, saveEntry } = useEnergy();
+  const navigate = useNavigate();
+
+  const factors = [
+    { id: "Sleep", label: (typeof t !== "undefined" ? t : (k) => k)("sleep") },
+    { id: "Work / Study", label: (typeof t !== "undefined" ? t : (k) => k)("work_study") },
+    { id: "Stress", label: (typeof t !== "undefined" ? t : (k) => k)("stress") },
+    { id: "Exercise", label: (typeof t !== "undefined" ? t : (k) => k)("exercise") },
+    { id: "Socializing", label: (typeof t !== "undefined" ? t : (k) => k)("socializing") },
+    { id: "Screen Time", label: (typeof t !== "undefined" ? t : (k) => k)("screen_time") },
+    { id: "Health", label: (typeof t !== "undefined" ? t : (k) => k)("health") },
+    { id: "Rest", label: (typeof t !== "undefined" ? t : (k) => k)("rest") },
+    { id: "Mood", label: (typeof t !== "undefined" ? t : (k) => k)("mood") },
+    { id: "Anxiety", label: (typeof t !== "undefined" ? t : (k) => k)("anxiety") },
+  ];
+
+  const toggleFactor = (fId: string) => {
+    setCurrentFactors(
+      currentFactors.includes(fId)
+        ? currentFactors.filter((x) => x !== fId)
+        : [...currentFactors, fId]
+    );
+  };
+
+  const handleSave = async () => {
+    await saveEntry();
+    navigate("../summary");
+  };
+
+  return (
+    <PremiumLayout 
+      title={(typeof t !== "undefined" ? t : (k) => k)("app_title")}
+      icon={<Sparkles className="h-6 w-6" />}
+      onBack={() => navigate("..")}
+    >
+      <div className="w-full">
+        <h2 className="mb-1 text-xl font-bold text-slate-900">
+          {(typeof t !== "undefined" ? t : (k) => k)("what_affected")}
+        </h2>
+        <p className="mb-6 text-sm text-slate-400 font-medium">{(typeof t !== "undefined" ? t : (k) => k)("optional")}</p>
+
+        <div className="mb-10 grid grid-cols-2 gap-4">
+          {factors.map((f, i) => {
+            const selected = currentFactors?.includes(f.id);
+            return (
+              <motion.button
+                key={f.id}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.03 }}
+                onClick={() => toggleFactor(f.id)}
+                className={`flex items-center gap-3 rounded-2xl px-5 py-4 text-sm font-bold transition-all border-2 ${selected
+                    ? "border-primary bg-primary/5 text-primary shadow-sm"
+                    : "border-slate-100 bg-white text-slate-600 hover:border-slate-200"
+                  }`}
+              >
+                <div className={`w-5 h-5 rounded-md flex items-center justify-center transition-colors ${selected ? "bg-primary text-white" : "bg-slate-100 text-transparent"}`}>
+                    <Check size={14} strokeWidth={4} />
+                </div>
+                {f.label}
+              </motion.button>
+            );
+          })}
+        </div>
+
+        <div className="space-y-4">
+          <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">
+            {(typeof t !== "undefined" ? t : (k) => k)("add_note")} <span className="font-normal">({(typeof t !== "undefined" ? t : (k) => k)("optional")})</span>
+          </label>
+          <textarea
+            value={currentNote}
+            onChange={(e) => setCurrentNote(e.target.value.slice(0, 120))}
+            placeholder={(typeof t !== "undefined" ? t : (k) => k)("note_placeholder")}
+            maxLength={120}
+            rows={4}
+            className="w-full resize-none rounded-3xl border-2 border-slate-100 bg-white px-6 py-5 text-base text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-primary transition-all font-medium shadow-sm"
+          />
+          <p className="text-right text-[10px] font-black text-slate-300 uppercase tracking-widest">{(currentNote || "").length}/120</p>
+        </div>
+
+        <div className="pt-12 pb-12">
+            <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={handleSave}
+                className="w-full py-5 rounded-[2rem] bg-primary text-primary-foreground font-black text-lg shadow-xl shadow-primary/20 hover:shadow-2xl transition-all"
+            >
+                {(typeof t !== "undefined" ? t : (k) => k)("save_checkin")}
+            </motion.button>
+        </div>
+      </div>
+    </PremiumLayout>
+  );
+};
+
+export default EnergyFactors;

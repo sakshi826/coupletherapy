@@ -261,23 +261,23 @@ const toneRing: Record<Tone, string> = {
   lavender: "ring-lavender/40",
   sand: "ring-sand/40",
   sky: "ring-sky/40",
-};
-
-/* Section 2 style: warm card with a decorative blurred blob + ringed icon */
+};/* Section 2 style: warm card with a decorative blurred blob + ringed icon */
 function ActivityCard({
   icon,
   title,
   desc,
   tone,
+  href = "#",
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
   tone: Tone;
+  href?: string;
 }) {
   return (
     <a
-      href="#"
+      href={href}
       className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card hover:ring-1 hover:ring-primary/30"
     >
       {/* Focus glow halo */}
@@ -311,15 +311,17 @@ function AlignmentCard({
   title,
   desc,
   tone,
+  href = "#",
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
   tone: Tone;
+  href?: string;
 }) {
   return (
     <a
-      href="#"
+      href={href}
       className="group relative flex gap-4 overflow-hidden rounded-2xl border border-border bg-card p-5 pl-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card hover:ring-1 hover:ring-primary/30"
     >
       <span
@@ -352,38 +354,38 @@ function AlignmentCard({
   );
 }
 
-
-
 /* ---------------------- Section 1: Emotional Connection ---------------------- */
-
 function EmotionalConnection() {
-  const items: { icon: React.ReactNode; title: string; desc: string; tone: Tone }[] = [
+  const items: { icon: React.ReactNode; title: string; desc: string; tone: Tone; href?: string }[] = [
     {
       icon: <Heart className="h-5 w-5" />,
       title: "Emotional Check-In Ritual",
       desc: "A daily moment to share what you're feeling and what you need.",
       tone: "rose",
+      href: "/couple_module/guided-series/relationship",
     },
     {
       icon: <HandHeart className="h-5 w-5" />,
       title: "Forgiveness Corner and Apology Exchange",
       desc: "Offer and receive heartfelt apologies in a safe, guided space.",
       tone: "lavender",
+      href: "/couple_module/tools/repair-and-reconnect",
     },
     {
       icon: <RefreshCcw className="h-5 w-5" />,
       title: "Rupture and Repair Work",
       desc: "Move through hard moments together and come back closer.",
       tone: "sage",
+      href: "/couple_module/tools/repair-and-reconnect",
     },
     {
       icon: <ShieldCheck className="h-5 w-5" />,
       title: "Trust Rebuilding Repair Plan",
       desc: "A step-by-step plan to restore safety and rebuild trust.",
       tone: "sand",
+      href: "/couple_module/tools/repair-and-reconnect",
     },
   ];
-
   return (
     <Section
       title="Emotional Connection and Trust"
@@ -401,30 +403,34 @@ function EmotionalConnection() {
 /* -------------------- Section 2: Communication and Alignment -------------------- */
 
 function CommunicationAlignment() {
-  const items: { icon: React.ReactNode; title: string; desc: string; tone: Tone }[] = [
+  const items: { icon: React.ReactNode; title: string; desc: string; tone: Tone; href?: string }[] = [
     {
       icon: <MessageCircle className="h-5 w-5" />,
       title: "Conflict Reframing Exercise",
       desc: "Turn recurring arguments into shared understanding.",
       tone: "sage",
+      href: "/couple_module/exercises/diffusion-technique",
     },
     {
       icon: <Compass className="h-5 w-5" />,
       title: "Goals and Dreams Alignment",
       desc: "Map the future you both want and the steps to get there.",
       tone: "lavender",
+      href: "/couple_module/tools/personal-mission-statement",
     },
     {
       icon: <Scale className="h-5 w-5" />,
       title: "Money Values and Goal Alignment",
       desc: "Align on spending, saving, and financial priorities together.",
       tone: "sand",
+      href: "/couple_module/tools/know-your-values",
     },
     {
       icon: <Baby className="h-5 w-5" />,
       title: "Co-Parenting Alignment Matrix",
       desc: "Build a united approach to parenting decisions and routines.",
       tone: "rose",
+      href: "/couple_module/guided-series/parenting",
     },
   ];
 
@@ -447,7 +453,7 @@ function CommunicationAlignment() {
 function GuidedSeries() {
   const groups: {
     heading: string;
-    items: { icon: React.ReactNode; title: string; desc: string; tone: Tone }[];
+    items: { icon: React.ReactNode; title: string; desc: string; tone: Tone; href?: string }[];
   }[] = [
     {
       heading: "Know Your Patterns",
@@ -457,18 +463,21 @@ function GuidedSeries() {
           title: "Relationship Patterns Unpacked",
           desc: "Explore recurring conflict cycles and emotional reactions.",
           tone: "rose",
+          href: "/couple_module/tools/relationship-patterns-unpacked",
         },
         {
           icon: <Crosshair className="h-5 w-5" />,
           title: "Relationship Boundaries",
           desc: "Explore emotional boundaries and expectations in your relationship.",
           tone: "lavender",
+          href: "/couple_module/tools/redraw-your-circle",
         },
         {
           icon: <Heart className="h-5 w-5" />,
           title: "Emotional Needs Mapping",
           desc: "Understand what helps you feel emotionally safe.",
           tone: "sand",
+          href: "/couple_module/tools/what-do-i-need",
         },
       ],
     },
@@ -480,18 +489,21 @@ function GuidedSeries() {
           title: "The Unsent Letter",
           desc: "Express unresolved feelings in a safe, private space.",
           tone: "sky",
+          href: "/couple_module/tools/the-unsent-letter",
         },
         {
           icon: <PenLine className="h-5 w-5" />,
           title: "A Letter to Self",
           desc: "Reflect on your patterns and grow toward healthier responses.",
           tone: "lavender",
+          href: "/couple_module/tools/a-letter-to-self",
         },
         {
           icon: <HandHeart className="h-5 w-5" />,
           title: "Repair and Reconnect",
           desc: "Rebuild trust and emotional safety after conflict.",
           tone: "rose",
+          href: "/couple_module/tools/repair-and-reconnect",
         },
       ],
     },
@@ -503,18 +515,21 @@ function GuidedSeries() {
           title: "Growing Apart",
           desc: "Explore signs and solutions when partners drift apart.",
           tone: "sand",
+          href: "/couple_module/relationship-guidance/growing-apart",
         },
         {
           icon: <FlameIcon className="h-5 w-5" />,
           title: "Why Small Fights Become Big",
           desc: "Understand escalation patterns in couple conflicts.",
           tone: "rose",
+          href: "/couple_module/relationship-guidance/small-fights",
         },
         {
           icon: <UserX className="h-5 w-5" />,
           title: "Feeling Lonely in Love",
           desc: "Navigate emotional loneliness within a loving relationship.",
           tone: "sage",
+          href: "/couple_module/relationship-guidance/lonely-love",
         },
       ],
     },
@@ -548,15 +563,17 @@ function SeriesRow({
   title,
   desc,
   tone,
+  href = "#",
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
   tone: Tone;
+  href?: string;
 }) {
   return (
     <a
-      href="#"
+      href={href}
       className="group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card p-4 pl-5 shadow-soft transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-card hover:ring-1 hover:ring-primary/30"
     >
       <span
@@ -591,30 +608,34 @@ function SeriesRow({
 
 /* ----------------------------- Relationship Tools ------------------------- */
 
-const tools: { icon: React.ReactNode; title: string; desc: string; tone: Tone }[] = [
+const tools: { icon: React.ReactNode; title: string; desc: string; tone: Tone; href?: string }[] = [
   {
     icon: <Heart className="h-5 w-5" />,
     title: "Relationship Check-In",
     desc: "Track emotional connection and satisfaction together.",
     tone: "rose",
+    href: "/couple_module/guided-series/relationship",
   },
   {
     icon: <Star className="h-5 w-5" />,
     title: "Daily Appreciation Practice",
     desc: "Build the habit of noticing and naming the good.",
     tone: "sand",
+    href: "/couple_module/trackers/a-pause-for-appreciation",
   },
   {
     icon: <TrendingUp className="h-5 w-5" />,
     title: "Connection Tracker",
     desc: "Monitor closeness, intimacy, and warmth over time.",
     tone: "sage",
+    href: "/couple_module/trackers/care-tracker",
   },
   {
     icon: <Compass className="h-5 w-5" />,
     title: "Shared Vision Builder",
     desc: "Align your future goals, values, and dreams.",
     tone: "lavender",
+    href: "/couple_module/tools/personal-mission-statement",
   },
 ];
 
@@ -643,9 +664,10 @@ function RelationshipTools() {
 
         <div className="grid gap-4 sm:grid-cols-2">
           {tools.map((t) => (
-            <div
+            <a
               key={t.title}
-              className={`group relative isolate overflow-hidden rounded-[28px] border border-border bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7`}
+              href={t.href}
+              className={`group relative isolate overflow-hidden rounded-[28px] border border-border bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7 block`}
             >
               <span
                 aria-hidden
@@ -663,9 +685,9 @@ function RelationshipTools() {
                     {t.icon}
                   </div>
                 </div>
-                <button className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1.5 text-xs font-semibold text-background transition-transform group-hover:scale-105">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1.5 text-xs font-semibold text-background transition-transform group-hover:scale-105">
                   Start <ArrowRight className="h-3.5 w-3.5" />
-                </button>
+                </div>
               </div>
               <h4 className="mt-6 font-display text-xl text-foreground">
                 {t.title}
@@ -673,7 +695,7 @@ function RelationshipTools() {
               <p className="mt-1 text-sm leading-relaxed text-foreground">
                 {t.desc}
               </p>
-            </div>
+            </a>
           ))}
         </div>
       </div>

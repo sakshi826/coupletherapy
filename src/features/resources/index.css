@@ -1,0 +1,49 @@
+@reference "../../styles/index.css";
+
+.article-content p {
+  margin-bottom: 2rem;
+}
+
+.article-content h2 {
+  font-weight: 900;
+  font-size: 2rem;
+  color: #0f172a;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.article-content h3 {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+}
+
+.article-content ul, .article-content ol {
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.article-content li {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.article-content strong {
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.article-content blockquote {
+  border-left: 8px solid #f1f5f9;
+  padding-left: 2.5rem;
+  margin: 3rem 0;
+  font-style: italic;
+  color: #64748b;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}

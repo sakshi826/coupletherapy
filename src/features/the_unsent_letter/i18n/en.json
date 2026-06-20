@@ -1,0 +1,102 @@
+{
+  "app_title": "The Unsent Letter",
+  "app_subtitle": "Express unresolved feelings in a safe, private space",
+  "intro": {
+    "title": "The Unsent Letter",
+    "description": [
+      "Sometimes, we carry deep feelings, hurts, or hopes that feel too difficult or scary to express directly to our partner.",
+      "Writing an unsent letter is a powerful therapeutic tool to organize your thoughts, release emotional weight, and find clarity without the fear of escalation.",
+      "This activity provides a completely private, unshared space to pour out your raw emotions honestly.",
+      "Remember: this letter is for your own healing and self-awareness, not for sending."
+    ],
+    "notice": "Write without filter. This is a secure space for your emotional release.",
+    "button": "Start Writing"
+  },
+  "writing": {
+    "title": "Express What You've Been Holding In",
+    "desc": "Focus on your primary emotions (sadness, longing, hurt, fear) rather than blame. Speak directly to your partner, your ex-partner, or to your relationship itself.",
+    "prompts": [
+      "What I find hardest to say is…",
+      "Deep down, the fear I carry is…",
+      "What hurt me most was when…",
+      "I wish you could truly understand…",
+      "What I need most from you is…"
+    ],
+    "placeholder": "Dear ________,\nI want to tell you what I've been holding inside...",
+    "notice": "You can pause and come back anytime.",
+    "button": "Continue"
+  },
+  "reflection": {
+    "title": "Honor Your Vulnerability",
+    "description": [
+      "You've just put deep, perhaps painful, emotions into words. Take a slow, deep breath.",
+      "It is normal to feel a mix of sadness, relief, or exhaustion right now. Let yourself feel whatever is present.",
+      "Acknowledge the courage it took to be honest with yourself today."
+    ],
+    "notice": "This was written for your own emotional clarity, not for partner confrontation.",
+    "save_button": "Save Letter",
+    "finish_button": "Finish"
+  },
+  "history": {
+    "title": "Past Letters",
+    "empty_title": "You haven't written any letters yet.",
+    "empty_desc": "Your letters will appear here after you save them."
+  },
+  "toasts": {
+    "save_success": "Letter saved to your private journal",
+    "save_error": "Failed to save letter",
+    "auth_error": "Auth session missing or DB not configured"
+  },
+  "common": {
+    "get_started": "Get Started",
+    "start_over": "Start Over",
+    "finish_exit": "Finish & Exit",
+    "well_done": "Well Done!",
+    "completion_message": "You've successfully completed this activity. Take a moment to appreciate your progress.",
+    "time_to_complete": "Time to complete",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "loading": "Loading...",
+    "share": "Share",
+    "share_progress": "Share Progress",
+    "inspire_others": "Inspire others today",
+    "share_text": "I have done this {{activityName}} in TherapyMantra and really enjoy it you can do it too just follow the link to android app {{androidUrl}} or ios app {{iosUrl}}",
+    "this_activity": "this activity",
+    "copied": "Copied!",
+    "copy_message": "Copy Message",
+    "yes": "Yes",
+    "no": "No",
+    "date": "Date",
+    "continue": "Continue",
+    "step_of": "Step {{current}} of {{total}}",
+    "round_of": "Round {{current}} of {{total}}",
+    "phase_label": "Phase",
+    "rounds_selector": "{{count}} Rounds",
+    "instruction_ready": "Set your rounds and tap play to begin",
+    "instruction_running": "Follow the circle to regulate your breath"
+  },
+  "app_description": "Express unresolved feelings in a safe, private space",
+  "more": "More",
+  "breadcrumb": "breadcrumb",
+  "previous_slide": "Previous slide",
+  "next_slide": "Next slide",
+  "close": "Close",
+  "previous": "Previous",
+  "more_pages": "More pages",
+  "pagination": "pagination",
+  "go_to_previous_page": "Go to previous page",
+  "go_to_next_page": "Go to next page",
+  "toggle_sidebar": "Toggle Sidebar",
+  "oops_page_not_found": "Oops! Page not found",
+  "return_to_home": "Return to Home",
+  "phase_label": "Phase",
+  "instruction_ready": "Set your rounds and tap play to begin",
+  "instruction_running": "Follow the circle to regulate your breath",
+  "round_x_of_y": "Round {{current}} of {{total}}",
+  "rounds_selector": "{{count}} Rounds",
+  "yes": "Yes",
+  "no": "No",
+  "date": "Date",
+  "continue": "Continue"
+}

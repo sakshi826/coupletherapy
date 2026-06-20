@@ -1,0 +1,174 @@
+{
+  "common": {
+    "get_started": "Get Started",
+    "start_over": "Start Over",
+    "finish_exit": "Finish & Exit",
+    "well_done": "Well Done!",
+    "completion_message": "You've successfully completed this activity. Take a moment to appreciate your progress.",
+    "time_to_complete": "Time to complete",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "loading": "Loading...",
+    "share": "Share",
+    "share_progress": "Share Progress",
+    "inspire_others": "Inspire others today",
+    "share_text": "I have done this {{activityName}} in TherapyMantra and really enjoy it you can do it too just follow the link to android app {{androidUrl}} or ios app {{iosUrl}}",
+    "this_activity": "this activity",
+    "copied": "Copied!",
+    "copy_message": "Copy Message",
+    "yes": "Yes",
+    "no": "No",
+    "date": "Date",
+    "continue": "Continue",
+    "add_activity": "Add another activity...",
+    "step_of": "Step {{current}} of {{total}}",
+    "round_of": "Round {{current}} of {{total}}",
+    "phase_label": "Phase",
+    "rounds_selector": "{{count}} Rounds",
+    "instruction_ready": "Set your rounds and tap play to begin",
+    "instruction_running": "Follow the circle to regulate your breath"
+  },
+  "screens": {
+    "intro": {
+      "title": "Relationship Connection Tracker",
+      "description": "Track meaningful interactions, quality time, and connection habits that help your relationship grow.",
+      "benefits": [
+        "Log daily couple connection activities",
+        "Track time spent connecting",
+        "Monitor emotional closeness",
+        "View connection history & progress"
+      ],
+      "duration": "2-3 minutes"
+    },
+    "checkin": {
+      "title": "Connection Check-In ❤️",
+      "subtitle": "How did you connect with your partner today?",
+      "question": "Did you deliberately connect with your partner today? *",
+      "description": "Relationship connection includes any deliberate interaction or shared experience aimed at fostering closeness, trust, and intimacy."
+    },
+    "activities": {
+      "title": "Your Connection Activities 🎯",
+      "subtitle": "Which connection activities did you practice today?"
+    },
+    "duration": {
+      "title": "Time Spent Connecting ⏱️",
+      "subtitle": "How long did you spend actively connecting? (optional)"
+    },
+    "noSelfCare": {
+      "title": "That's okay 💛",
+      "subtitle": "Let's understand what got in the way today.",
+      "question1": "What prevented connection today? (optional)",
+      "question2": "What connection activity would have helped? (optional)"
+    },
+    "mood": {
+      "title": "How close do you feel? 🫧",
+      "subtitle": "Select your level of emotional closeness (optional)"
+    },
+    "review": {
+      "title": "Your Entry 📋",
+      "subtitle": "Here's a summary of today's check-in",
+      "didSelfCare": "Did you connect?",
+      "activities": "Connection Activities",
+      "duration": "Duration",
+      "mood": "Closeness",
+      "challenges": "Prevented by",
+      "whatHelps": "Would've helped",
+      "viewHistory": "Connection History",
+      "editToday": "Edit Entry",
+      "summary": "Summary"
+    },
+    "history": {
+      "title": "Weekly History 📅",
+      "subtitle": "No entries in the last 7 days"
+    },
+    "notfound": {
+      "title": "404",
+      "subtitle": "Oops! Page not found",
+      "returnHome": "Return to Home"
+    }
+  },
+  "data": {
+    "activities": {
+      "Deep Conversation": "Deep Conversation",
+      "Shared Meal": "Shared Meal",
+      "Intimacy / Physical Touch": "Intimacy / Physical Touch",
+      "Shared Activity / Hobby": "Shared Activity / Hobby",
+      "Active Listening / Check-In": "Active Listening / Check-In",
+      "Word of Appreciation": "Word of Appreciation",
+      "Small Surprise / Gift": "Small Surprise / Gift",
+      "Outdoor Walk / Outing": "Outdoor Walk / Outing",
+      "Doing Chores Together": "Doing Chores Together",
+      "Quiet Quality Time": "Quiet Quality Time"
+    },
+    "durations": {
+      "< 10 minutes": "< 10 minutes",
+      "10–30 minutes": "10–30 minutes",
+      "30–60 minutes": "30–60 minutes",
+      "1+ hour": "1+ hour"
+    },
+    "reasons": {
+      "Busy work schedule": "Busy work schedule",
+      "Low energy / Fatigue": "Low energy / Fatigue",
+      "Unresolved conflict": "Unresolved conflict",
+      "Distractions (phones/TV)": "Distractions (phones/TV)",
+      "Kids / Family obligations": "Kids / Family obligations",
+      "Stress / Overwhelm": "Stress / Overwhelm",
+      "Misaligned schedules": "Misaligned schedules"
+    },
+    "helpfulTypes": {
+      "A brief phone check-in": "A brief phone check-in",
+      "Cooking together": "Cooking together",
+      "Shared physical affection": "Shared physical affection",
+      "An evening walk": "An evening walk",
+      "Uninterrupted quiet time": "Uninterrupted quiet time"
+    },
+    "moods": {
+      "Very Close": "Very Close",
+      "Connected": "Connected",
+      "Neutral / Normal": "Neutral / Normal",
+      "Distant": "Distant",
+      "Lonely / Disconnected": "Lonely / Disconnected"
+    },
+    "positiveStatements": {
+      "0": "Investing in your connection is the heart of a strong relationship. ❤️",
+      "1": "A shared moment of care strengthens your bond. Well done. 🤝",
+      "2": "Every small connection check-in builds lasting emotional safety. 🌱",
+      "3": "You prioritized your partnership today. That matters. ✨",
+      "4": "Fostering intimacy today is the best thing you did for your couple. 🍃"
+    },
+    "supportiveStatements": {
+      "0": "It's okay. Tomorrow offers a new opportunity to reach out. Be gentle with yourselves. 🤍",
+      "1": "Misalignments happen. It's the overall direction of care that matters. 🕊️",
+      "2": "Even a small acknowledgment later today can bridge the gap. 💛",
+      "3": "Resting separately is okay too. Give each other grace. 🌸",
+      "4": "Noticing the disconnect is the first brave step toward reconnection. 🌷"
+    }
+  },
+  "app_title": "Relationship Connection Tracker",
+  "app_description": "Track meaningful interactions, quality time, and connection habits that help your relationship grow.",
+  "initializing_session": "Initializing session",
+  "language": "Language",
+  "your_progress_over_the_last_7_days": "Your progress over the last 7 days",
+  "fetching_data": "Fetching data...",
+  "more": "More",
+  "breadcrumb": "breadcrumb",
+  "previous_slide": "Previous slide",
+  "next_slide": "Next slide",
+  "close": "Close",
+  "previous": "Previous",
+  "more_pages": "More pages",
+  "pagination": "pagination",
+  "go_to_previous_page": "Go to previous page",
+  "go_to_next_page": "Go to next page",
+  "toggle_sidebar": "Toggle Sidebar",
+  "phase_label": "Phase",
+  "instruction_ready": "Set your rounds and tap play to begin",
+  "instruction_running": "Follow the circle to regulate your breath",
+  "round_x_of_y": "Round {{current}} of {{total}}",
+  "rounds_selector": "{{count}} Rounds",
+  "yes": "Yes",
+  "no": "No",
+  "date": "Date",
+  "continue": "Continue"
+}

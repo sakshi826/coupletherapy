@@ -1,0 +1,217 @@
+{
+  "app_title": "Emotional Needs Mapping",
+  "app_subtitle": "Understand what helps you feel emotionally safe",
+  "screens": {
+    "s1": {
+      "title": "What do you need right now?",
+      "description": "A quiet space to check in with yourself and identify what you need to feel emotionally safe and connected in your relationship.",
+      "button": "Start Mapping Needs"
+    },
+    "s2": {
+      "select": {
+        "title": "What feels most important right now?",
+        "placeholder": "Type another need...",
+        "add_button": "Add",
+        "button": "Continue"
+      },
+      "prioritize": {
+        "title": "Which need is primary for you today?"
+      },
+      "focus": {
+        "tag": "Your primary focus",
+        "button": "Begin Reflection"
+      }
+    },
+    "s3": {
+      "reflect": {
+        "button": "Continue to Action"
+      },
+      "action": {
+        "title": "A small step toward your partner?",
+        "placeholder": "Or write your own action step...",
+        "button": "Review Reflection"
+      },
+      "closing": {
+        "tag_need": "Primary Need",
+        "tag_insight": "Your Insight",
+        "tag_action": "Small Action Step",
+        "save_button": "Save & Complete",
+        "finish_button": "Finish without saving"
+      }
+    }
+  },
+  "needs": {
+    "Emotional support": {
+      "label": "Emotional Connection",
+      "prompt": "What does feeling emotionally connected with your partner look like for you today?",
+      "hints": [
+        "I feel closest to you when we...",
+        "I need some dedicated time to...",
+        "It would help me feel safe if we could..."
+      ]
+    },
+    "Space / time for myself": {
+      "label": "Self-Regulation Space",
+      "prompt": "When conflict rises, what does taking space to regulate your own emotions look like?",
+      "hints": [
+        "Taking a brief pause helps me avoid...",
+        "I need a quiet moment to process my...",
+        "A healthy, reassuring timeout would sound like..."
+      ]
+    },
+    "Clear communication": {
+      "label": "Vulnerable Dialogue",
+      "prompt": "What would sharing your core feelings (rather than blame or criticism) look like?",
+      "hints": [
+        "Instead of criticizing, I want to say...",
+        "I want to share my underlying fear that...",
+        "It feels safer for me to express..."
+      ]
+    },
+    "Reassurance": {
+      "label": "Reassurance & Safety",
+      "prompt": "What reassurance do you need to hear from your partner when you feel insecure?",
+      "hints": [
+        "I need to be reminded that we are...",
+        "It calms my fears when you tell me...",
+        "I want to feel reassured about..."
+      ]
+    },
+    "Understanding": {
+      "label": "Emotional Validation",
+      "prompt": "What does having your partner validate your feelings look like during a disagreement?",
+      "hints": [
+        "I want to know you hear my pain, even if you...",
+        "It makes me feel seen when you say...",
+        "I wish you knew that my reaction comes from..."
+      ]
+    },
+    "Stability": {
+      "label": "Relational Safety",
+      "prompt": "What helps you feel secure and grounded in your relationship commitment?",
+      "hints": [
+        "Safety to me means knowing that we...",
+        "We can build more trust by...",
+        "I feel most secure when we..."
+      ]
+    },
+    "Honesty": {
+      "label": "Vulnerability & Trust",
+      "prompt": "What truth or vulnerable feeling is hard for you to share with your partner right now?",
+      "hints": [
+        "I've been hesitant to share my feeling of...",
+        "I want to be completely honest about my fear of...",
+        "Vulnerability in this moment looks like..."
+      ]
+    },
+    "Respect": {
+      "label": "Mutual Respect",
+      "prompt": "What does respect and care look like during moments of heated disagreement?",
+      "hints": [
+        "Even when we disagree, I need us to...",
+        "Respectful listening sounds like...",
+        "I feel respected when you..."
+      ]
+    },
+    "Clarity about relationship": {
+      "label": "Relational Clarity",
+      "prompt": "What clarity or alignment about your commitment do you need to talk about?",
+      "hints": [
+        "I need us to align on our shared value of...",
+        "What makes me feel uncertain is...",
+        "I want to clarify our goals regarding..."
+      ]
+    },
+    "default": {
+      "prompt": "What would meeting this need look like in your relationship?",
+      "hints": [
+        "What comes to mind is...",
+        "If I share this with my partner...",
+        "If I'm honest with myself, I need..."
+      ]
+    }
+  },
+  "actions": [
+    {
+      "label": "Say something honestly"
+    },
+    {
+      "label": "Take time for myself"
+    },
+    {
+      "label": "Reach out to someone"
+    },
+    {
+      "label": "Set a small boundary"
+    },
+    {
+      "label": "Not sure yet"
+    }
+  ],
+  "history": {
+    "title": "Past Reflections",
+    "empty": "No reflections yet."
+  },
+  "toasts": {
+    "save_success": "Reflection saved",
+    "save_error": "Failed to save reflection",
+    "auth_error": "Auth session missing or DB not configured"
+  },
+  "complete": {
+    "title": "Needs Mapping Complete",
+    "message": "You've identified a primary need for \"{{need}}\". Communicating your needs vulnerably is a vital step toward repair."
+  },
+  "common": {
+    "get_started": "Get Started",
+    "start_over": "Start Over",
+    "finish_exit": "Finish & Exit",
+    "well_done": "Well Done!",
+    "completion_message": "You've successfully completed this activity. Take a moment to appreciate your progress.",
+    "time_to_complete": "Time to complete",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "loading": "Loading...",
+    "share": "Share",
+    "share_progress": "Share Progress",
+    "inspire_others": "Inspire others today",
+    "share_text": "I have done this {{activityName}} in TherapyMantra and really enjoy it you can do it too just follow the link to android app {{androidUrl}} or ios app {{iosUrl}}",
+    "this_activity": "this activity",
+    "copied": "Copied!",
+    "copy_message": "Copy Message",
+    "yes": "Yes",
+    "no": "No",
+    "date": "Date",
+    "continue": "Continue",
+    "step_of": "Step {{current}} of {{total}}",
+    "round_of": "Round {{current}} of {{total}}",
+    "phase_label": "Phase",
+    "rounds_selector": "{{count}} Rounds",
+    "instruction_ready": "Set your rounds and tap play to begin",
+    "instruction_running": "Follow the circle to regulate your breath"
+  },
+  "app_description": "Check in with yourself",
+  "past_reflections": "Past reflections",
+  "more": "More",
+  "breadcrumb": "breadcrumb",
+  "previous_slide": "Previous slide",
+  "next_slide": "Next slide",
+  "close": "Close",
+  "previous": "Previous",
+  "more_pages": "More pages",
+  "pagination": "pagination",
+  "go_to_previous_page": "Go to previous page",
+  "go_to_next_page": "Go to next page",
+  "toggle_sidebar": "Toggle Sidebar",
+  "oops_page_not_found": "Oops! Page not found",
+  "return_to_home": "Return to Home",
+  "phase_label": "Phase",
+  "instruction_ready": "Set your rounds and tap play to begin",
+  "instruction_running": "Follow the circle to regulate your breath",
+  "round_x_of_y": "Round {{current}} of {{total}}",
+  "rounds_selector": "{{count}} Rounds",
+  "yes": "Yes",
+  "no": "No",
+  "date": "Date",
+  "continue": "Continue"
+}

@@ -1,0 +1,162 @@
+import React, { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { SelfCareEntry, saveEntryToDb, toLocalIsoDate } from "../lib/selfcare-data";
+import Screen1CheckIn from "../components/screens/Screen1CheckIn";
+import Screen2Activities from "../components/screens/Screen2Activities";
+import Screen2bDuration from "../components/screens/Screen2bDuration";
+import Screen3NoSelfCare from "../components/screens/Screen3NoSelfCare";
+import Screen4Mood from "../components/screens/Screen4Mood";
+import Screen5Statement from "../components/screens/Screen5Statement";
+import Screen6Review from "../components/screens/Screen6Review";
+import Screen7History from "../components/screens/Screen7History";
+import IntroScreen from "../components/screens/IntroScreen";
+import { useAuth } from "../components/AuthProvider";
+import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { PremiumLayout } from "../../../components/shared/PremiumLayout";
+import { toast } from "sonner";
+
+type Screen = "intro" | "checkin" | "activities" | "duration" | "noSelfCare" | "mood" | "statement" | "review" | "history";
+
+const Index = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { userId } = useAuth();
+  const [screen, setScreen] = useState<Screen>("intro");
+  const [isSaving, setIsSaving] = useState(false);
+
+  const [date, setDate] = useState(new Date());
+  const [entry, setEntry] = useState<SelfCareEntry>({
+    date: toLocalIsoDate(new Date()),
+    didSelfCare: null,
+    activities: [],
+    duration: "",
+    preventionReasons: [],
+    helpfulType: "",
+    mood: "",
+    moodEmoji: "",
+  });
+
+  const resetFlow = useCallback(() => {
+    const today = new Date();
+    setDate(today);
+    setEntry({
+      date: toLocalIsoDate(today),
+      didSelfCare: null,
+      activities: [],
+      duration: "",
+      preventionReasons: [],
+      helpfulType: "",
+      mood: "",
+      moodEmoji: "",
+    });
+    setScreen("checkin");
+  }, []);
+
+  const handleDateChange = (d: Date) => {
+    setDate(d);
+    setEntry((prev) => ({ ...prev, date: toLocalIsoDate(d) }));
+  };
+
+  const handleCheckIn = (didSelfCare: boolean) => {
+    setEntry((prev) => ({ ...prev, didSelfCare }));
+    setScreen(didSelfCare ? "activities" : "noSelfCare");
+  };
+
+  const handleActivities = (activities: string[]) => {
+    setEntry((prev) => ({ ...prev, activities }));
+    setScreen("duration");
+  };
+
+  const handleDuration = (duration: string) => {
+    setEntry((prev) => ({ ...prev, duration }));
+    setScreen("mood");
+  };
+
+  const handleNoSelfCare = (reasons: string[], helpfulType: string) => {
+    setEntry((prev) => ({ ...prev, preventionReasons: reasons, helpfulType }));
+    setScreen("mood");
+  };
+
+  const handleMood = (mood: string, emoji: string) => {
+    setEntry((prev) => ({ ...prev, mood, moodEmoji: emoji }));
+    setScreen("statement");
+  };
+
+  const handleStatementContinue = async () => {
+    if (userId) {
+      setIsSaving(true);
+      try {
+        await saveEntryToDb(userId, entry);
+        setScreen("review");
+      } catch (err) {
+        console.error("Failed to save entry:", err);
+        toast.error("Failed to save entry. Please try again.");
+      } finally {
+        setIsSaving(false);
+      }
+    } else {
+      setScreen("review");
+    }
+  };
+
+  const getTitle = () => {
+    switch(screen) {
+      case 'history': return (typeof t !== "undefined" ? t : (k) => k)('screens.history.title');
+      case 'review': return (typeof t !== "undefined" ? t : (k) => k)('screens.review.title');
+      default: return (typeof t !== "undefined" ? t : (k) => k)("app_title");
+    }
+  };
+
+    const getBackAction = () => {
+      switch(screen) {
+        case 'history': return () => setScreen('review');
+        case 'statement': return () => setScreen('mood');
+        case 'mood': return () => setScreen(entry.didSelfCare ? "duration" : "noSelfCare");
+        case 'duration': return () => setScreen("activities");
+        case 'activities': return () => setScreen("checkin");
+        case 'noSelfCare': return () => setScreen("checkin");
+        case 'checkin': return () => setScreen("intro");
+        default: return undefined; // Triggers handleExit in PremiumLayout
+      }
+    };
+
+    return (
+      <PremiumLayout 
+        title={getTitle()} 
+        onBack={getBackAction()}
+        onReset={screen !== 'intro' ? resetFlow : undefined}
+        exitOnBack={screen === 'intro' || screen === 'review'}
+      >
+      <div className="w-full">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={screen}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            {screen === "intro" && <IntroScreen onStart={() => setScreen("checkin")} />}
+            {screen === "checkin" && (
+              <Screen1CheckIn date={date} onDateChange={handleDateChange} onContinue={handleCheckIn} />
+            )}
+            {screen === "activities" && <Screen2Activities onContinue={handleActivities} />}
+            {screen === "duration" && <Screen2bDuration onContinue={handleDuration} />}
+            {screen === "noSelfCare" && <Screen3NoSelfCare onContinue={handleNoSelfCare} />}
+            {screen === "mood" && <Screen4Mood onContinue={handleMood} />}
+            {screen === "statement" && (
+              <Screen5Statement didSelfCare={entry.didSelfCare!} onContinue={handleStatementContinue} isSaving={isSaving} />
+            )}
+            {screen === "review" && (
+              <Screen6Review entry={entry} onEdit={resetFlow} onHistory={() => setScreen("history")} onHome={resetFlow} />
+            )}
+            {screen === "history" && <Screen7History onBack={() => setScreen("review")} />}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </PremiumLayout>
+  );
+};
+
+export default Index;

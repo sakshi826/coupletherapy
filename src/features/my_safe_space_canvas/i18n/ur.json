@@ -1,0 +1,150 @@
+{
+  "app_title": "سیف اسپیس کینوس",
+  "step_label": "مرحلہ {{current}} 5 کا",
+  "welcome": {
+    "title": "تمہاری محفوظ جگہ انتظار کر رہی ہے",
+    "description": "نرم تخلیقی تجاویز کے ذریعے اپنی پناہ گاہ بنائیں۔ آپ کے خیالات اور جذبات کے لیے ایک خالی کینوس۔",
+    "benefits": [
+      "اپنے آپ کو رنگوں کے ذریعے ظاہر کریں",
+      "ایک بصری گراؤنڈنگ ٹول بنائیں",
+      "محفوظ، نجی اور ذاتی"
+    ],
+    "duration": "10-15 منٹ",
+    "view_past": "ماضی کے کولیجز دیکھیں"
+  },
+  "canvas": {
+    "prompts": [
+      {
+        "quote": "آپ کی محفوظ جگہ میں آسمان کیسا لگتا ہے؟ اس کے رنگ، روشنی یا احساس کو ڈرائنگ کریں۔",
+        "button": "میں نے اسکائی → شامل کر دیا ہے",
+        "hint": "کوئی صحیح راستہ نہیں ہے — کوئی بھی نشان کافی ہے۔"
+      },
+      {
+        "quote": "زمین کیسی محسوس ہوتی ہے؟ گھاس، ریت، پانی، لکڑی کا فرش؟ اسے آسمان کے نیچے شامل کریں۔",
+        "button": "میں نے گراؤنڈ → شامل کر دیا ہے",
+        "hint": "سوچیں کہ آپ کے پاؤں اس جگہ پر کیسا محسوس ہوتے ہیں۔"
+      },
+      {
+        "quote": "یہاں ایک چیز شامل کریں — ایک درخت، ایک کرسی، ایک کھڑکی، ایک پالتو جانور، ایک لیمپ۔ کچھ بھی جو درست محسوس ہو۔",
+        "button": "میں نے کچھ شامل کیا ہے →",
+        "hint": "یہ مکمل نظر آنے کی ضرورت نہیں۔ بس یہ سچ محسوس ہونا چاہیے۔"
+      },
+      {
+        "quote": "اس جگہ میں گرمجوشی یا سکون کیا لاتا ہے؟ روشنی، آگ، دھوپ، کمبل؟ جہاں مناسب لگے وہاں شامل کریں۔",
+        "button": "میں نے گرمی →",
+        "hint": "ایک چھوٹا سا رنگ کا نقطہ بھی شمار ہوتا ہے۔"
+      },
+      {
+        "quote": "آخر میں — یہاں 3 سے 5 الفاظ شامل کریں۔ اپنی ڈرائنگ کو کہیں بھی رکھنے کے لیے ٹیپ کریں۔",
+        "button": "یہ میرے الفاظ →",
+        "hint": ""
+      }
+    ],
+    "word_chips": [
+      "امن",
+      "گھر",
+      "جنت",
+      "پرسکون",
+      "گرم",
+      "بس بہت ہو گیا",
+      "نرمی سے",
+      "محفوظ"
+    ],
+    "custom_word_placeholder": "+ تمہارا اپنا",
+    "skip_prompt": "اس پرامپٹ کو چھوڑ دیں",
+    "type_here": "یہاں ٹائپ کریں"
+  },
+  "save": {
+    "title": "اپنی محفوظ جگہ کو محفوظ رکھیں",
+    "desc": "اپنی تخلیق کو ایک نام دیں اور مختصر غور و فکر کریں۔",
+    "preview_alt": "تمہاری محفوظ جگہ کا کولیج",
+    "generating_preview": "پیش نظارہ تیار کر رہا ہوں...",
+    "name_label": "اس جگہ کو کیا کہتے ہو؟",
+    "name_placeholder": "مثلا، میرا سنڈے میڈو",
+    "reflection_label": "یہ جگہ کیوں اہم ہے؟ (اختیاری)",
+    "reflection_placeholder": "ایک نرم جملہ...",
+    "privacy_note": "یہ بات نجی رہتی ہے — صرف آپ اور آپ کے معالج کے لیے نظر آتی ہے۔",
+    "button": "میری محفوظ جگہ کو بچاؤ",
+    "default_name": "میری محفوظ جگہ"
+  },
+  "grounding": {
+    "title": "تم یہاں ہو۔ تم محفوظ ہو۔",
+    "breathe_info": "4 · رک جاؤ · 4 · چھوڑ دو · 6",
+    "done_message": "آج اپنے آپ کے لیے پیش آنے کا شکریہ۔",
+    "durations": [
+      {
+        "label": "1 منٹ",
+        "seconds": "60"
+      },
+      {
+        "label": "3 منٹ",
+        "seconds": "180"
+      },
+      {
+        "label": "5 منٹ",
+        "seconds": "300"
+      }
+    ],
+    "phases": [
+      "سانس اندر لو۔",
+      "رک جاؤ",
+      "چھوڑ دو"
+    ]
+  },
+  "history": {
+    "title": "ماضی کے محفوظ مقامات",
+    "no_collages": "ابھی تک کوئی محفوظ شدہ کولیج نہیں۔ سرگرمی مکمل کریں تاکہ آپ کی پہلی سرگرمی محفوظ ہو سکے۔"
+  },
+  "common": {
+    "get_started": "Get Started",
+    "start_over": "دوبارہ شروع کریں۔",
+    "finish_exit": "ختم کریں اور باہر نکلیں۔",
+    "well_done": "Well Done!",
+    "completion_message": "You've successfully completed this activity. Take a moment to appreciate your progress.",
+    "time_to_complete": "مکمل ہونے کا وقت",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "loading": "Loading...",
+    "share": "شیئر کریں۔",
+    "share_progress": "پیش رفت کا اشتراک کریں",
+    "inspire_others": "آج دوسروں کو متاثر کریں۔",
+    "share_text": "میں نے یہ {{activityName}} TherapyMantra میں کیا ہے اور واقعی اس سے لطف اندوز ہوں آپ بھی کر سکتے ہیں بس android ایپ {{androidUrl}} یا ios ایپ {{iosUrl}} کے لنک پر عمل کریں۔",
+    "this_activity": "اس سرگرمی",
+    "copied": "نقل کیا گیا!",
+    "copy_message": "پیغام کاپی کریں۔",
+    "yes": "Yes",
+    "no": "No",
+    "date": "Date",
+    "continue": "Continue",
+    "step_of": "Step {{current}} of {{total}}",
+    "round_of": "Round {{current}} of {{total}}",
+    "phase_label": "Phase",
+    "rounds_selector": "{{count}} Rounds",
+    "instruction_ready": "Set your rounds and tap play to begin",
+    "instruction_running": "Follow the circle to regulate your breath"
+  },
+  "app_description": "محفوظ جگہ کینوس",
+  "more": "مزید",
+  "breadcrumb": "بریڈ کرمب",
+  "previous_slide": "پچھلی سلائیڈ",
+  "next_slide": "اگلی سلائیڈ",
+  "close": "بند",
+  "previous": "پچھلا",
+  "more_pages": "مزید صفحات",
+  "pagination": "صفحہ بندی",
+  "go_to_previous_page": "پچھلے صفحے پر جائیں۔",
+  "go_to_next_page": "اگلے صفحے پر جائیں۔",
+  "toggle_sidebar": "سائڈبار کو ٹوگل کریں۔",
+  "oops_page_not_found": "افوہ! صفحہ نہیں ملا",
+  "return_to_home": "گھر واپس جائیں۔",
+  "phase_label": "Phase",
+  "instruction_ready": "Set your rounds and tap play to begin",
+  "instruction_running": "Follow the circle to regulate your breath",
+  "round_x_of_y": "Round {{current}} of {{total}}",
+  "rounds_selector": "{{count}} Rounds",
+  "yes": "Yes",
+  "no": "No",
+  "date": "Date",
+  "continue": "Continue"
+}

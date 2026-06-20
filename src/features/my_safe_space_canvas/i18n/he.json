@@ -1,0 +1,150 @@
+{
+  "app_title": "קנבס המרחב הבטוח",
+  "step_label": "שלב {{current}} מתוך 5",
+  "welcome": {
+    "title": "המקום הבטוח שלך מחכה",
+    "description": "בנה מקלט משלך דרך סדרת הנחיות יצירתיות עדינות. קנבס ריק למחשבות ולרגשות שלך.",
+    "benefits": [
+      "לבטא את עצמך דרך הצבע",
+      "צור כלי הארקה חזותי",
+      "בטוח, פרטי ואישי"
+    ],
+    "duration": "10-15 דקות",
+    "view_past": "הצג קולאז'ים מהעבר"
+  },
+  "canvas": {
+    "prompts": [
+      {
+        "quote": "איך נראים השמיים במקום הבטוח שלך? צייר את הצבע, האור או התחושה שלו.",
+        "button": "הוספתי את השמיים →",
+        "hint": "אין דרך נכונה — כל סימן מספיק."
+      },
+      {
+        "quote": "איך מרגישה הקרקע? דשא, חול, מים, רצפת עץ? תוסיף את זה מתחת לשמיים.",
+        "button": "הוספתי את ההארקה →",
+        "hint": "תחשוב איך הרגליים שלך מרגישות במקום הזה."
+      },
+      {
+        "quote": "הוסיפו דבר אחד ששייך לכאן — עץ, כיסא, חלון, חיית מחמד, מנורה. כל דבר שמרגיש נכון.",
+        "button": "הוספתי משהו →",
+        "hint": "זה לא חייב להיראות מושלם. זה פשוט חייב להרגיש אמיתי."
+      },
+      {
+        "quote": "מה מביא חום או נחמה למקום הזה? אור, אש, אור שמש, שמיכה? הוסף את זה איפה שזה מרגיש נכון.",
+        "button": "הוספתי את החום →",
+        "hint": "אפילו נקודה קטנה של צבע נחשבה."
+      },
+      {
+        "quote": "ולבסוף — הוסיפו 3 עד 5 מילים ששייכות לכאן. הקש על הציור שלך כדי למקם אותם בכל מקום.",
+        "button": "אלה המילים שלי →",
+        "hint": ""
+      }
+    ],
+    "word_chips": [
+      "שלום",
+      "בית",
+      "גן עדן",
+      "רגוע",
+      "חם",
+      "די",
+      "עדין",
+      "בטוח"
+    ],
+    "custom_word_placeholder": "+ שלך",
+    "skip_prompt": "דלג על ההנחיה הזו",
+    "type_here": "הקלד כאן"
+  },
+  "save": {
+    "title": "שמור על המקום הבטוח שלך",
+    "desc": "תן ליצירה שלך שם ומחשבה קצרה.",
+    "preview_alt": "הקולאז' שלך למקום בטוח",
+    "generating_preview": "יוצר תצוגה מקדימה...",
+    "name_label": "איך קוראים למקום הזה?",
+    "name_placeholder": "לדוגמה, המרעה של יום ראשון שלי",
+    "reflection_label": "למה המקום הזה חשוב? (אופציונלי)",
+    "reflection_placeholder": "משפט עדין אחד...",
+    "privacy_note": "זה נשאר פרטי — נראה רק לך ולמטפל שלך.",
+    "button": "הציל את המקום הבטוח שלי",
+    "default_name": "המקום הבטוח שלי"
+  },
+  "grounding": {
+    "title": "אתה כאן. אתה בטוח.",
+    "breathe_info": "4 · החזק · 4 · שחרר · 6",
+    "done_message": "כל הכבוד שהגעת לעצמך היום.",
+    "durations": [
+      {
+        "label": "דקה אחת",
+        "seconds": "60"
+      },
+      {
+        "label": "3 דקות",
+        "seconds": "180"
+      },
+      {
+        "label": "5 דקות",
+        "seconds": "300"
+      }
+    ],
+    "phases": [
+      "נשום פנימה",
+      "המתן",
+      "שחרר"
+    ]
+  },
+  "history": {
+    "title": "מקומות בטוחים בעבר",
+    "no_collages": "עדיין אין קולאז'ים שמורים. השלים את הפעילות כדי לשמור את הראשונה שלך."
+  },
+  "common": {
+    "get_started": "Get Started",
+    "start_over": "התחל מחדש",
+    "finish_exit": "סיום ויציאה",
+    "well_done": "Well Done!",
+    "completion_message": "You've successfully completed this activity. Take a moment to appreciate your progress.",
+    "time_to_complete": "זמן להשלים",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "loading": "Loading...",
+    "share": "לַחֲלוֹק",
+    "share_progress": "שתף התקדמות",
+    "inspire_others": "תנו השראה לאחרים היום",
+    "share_text": "עשיתי את זה ב-TherapyMantra ואני ממש נהנה מזה, גם אתם יכולים לעשות את זה פשוט עקבו אחר הקישור לאפליקציית האנדרואיד {{androidUrl}} או לאפליקציית iOS {{iosUrl}}",
+    "this_activity": "פעילות זו",
+    "copied": "מוּעֲתָק!",
+    "copy_message": "העתקת הודעה",
+    "yes": "Yes",
+    "no": "No",
+    "date": "Date",
+    "continue": "Continue",
+    "step_of": "Step {{current}} of {{total}}",
+    "round_of": "Round {{current}} of {{total}}",
+    "phase_label": "Phase",
+    "rounds_selector": "{{count}} Rounds",
+    "instruction_ready": "Set your rounds and tap play to begin",
+    "instruction_running": "Follow the circle to regulate your breath"
+  },
+  "app_description": "קנבס מרחב בטוח",
+  "more": "יוֹתֵר",
+  "breadcrumb": "פירורי לחם",
+  "previous_slide": "שקופית קודמת",
+  "next_slide": "השקופית הבאה",
+  "close": "לִסְגוֹר",
+  "previous": "קוֹדֵם",
+  "more_pages": "דפים נוספים",
+  "pagination": "דִפּוּף",
+  "go_to_previous_page": "עבור לעמוד הקודם",
+  "go_to_next_page": "עבור לעמוד הבא",
+  "toggle_sidebar": "הפעלה/כיבוי סרגל צד",
+  "oops_page_not_found": "אופס! הדף לא נמצא",
+  "return_to_home": "חזרה לבית",
+  "phase_label": "Phase",
+  "instruction_ready": "Set your rounds and tap play to begin",
+  "instruction_running": "Follow the circle to regulate your breath",
+  "round_x_of_y": "Round {{current}} of {{total}}",
+  "rounds_selector": "{{count}} Rounds",
+  "yes": "Yes",
+  "no": "No",
+  "date": "Date",
+  "continue": "Continue"
+}

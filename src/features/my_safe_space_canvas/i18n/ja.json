@@ -1,0 +1,150 @@
+{
+  "app_title": "セーフスペースキャンバス",
+  "step_label": "ステップ{{current}}",
+  "welcome": {
+    "title": "あなたの安全な場所は待っています",
+    "description": "一連の優しい創造的なプロンプトを通じて、自分だけの聖域を作りましょう。思考や感情のための白紙のキャンバス。",
+    "benefits": [
+      "色で自分を表現します",
+      "視覚的なグラウンディングツールを作る",
+      "安全でプライベート、そして個人的な"
+    ],
+    "duration": "10〜15分",
+    "view_past": "過去のコラージュを見る"
+  },
+  "canvas": {
+    "prompts": [
+      {
+        "quote": "あなたの安全な場所の空はどんな感じですか?その色や光、感覚を描きましょう。",
+        "button": "空も→",
+        "hint": "正しい道なんてない――どんな印でも十分だ。"
+      },
+      {
+        "quote": "地面はどんな感じですか?草、砂、水、木の床?空の下に置く。",
+        "button": "地面を→",
+        "hint": "この場所で足がどんな感じか考えてみて。"
+      },
+      {
+        "quote": "ここにふさわしいものを一つ加えましょう — 木、椅子、窓、ペット、ランプ。何でもしっくりくるものを。",
+        "button": "何か付け加えた→",
+        "hint": "完璧である必要はありません。ただ、それが真実味を感じるだけでいいのです。"
+      },
+      {
+        "quote": "この場所に温かさや安らぎをもたらすものは何でしょうか?明かり、火、日光、毛布?気分の良いところだけ追加してください。",
+        "button": "暖かさを加えました→",
+        "hint": "小さな色の点でもカウントされます。"
+      },
+      {
+        "quote": "最後に、ここにふさわしい3〜5語を加えてください。絵をタップすると、どこにでも配置できます。",
+        "button": "これが私の言葉です→",
+        "hint": ""
+      }
+    ],
+    "word_chips": [
+      "平和を",
+      "ホーム",
+      "天国",
+      "落ち着いて",
+      "暖かい",
+      "もういい",
+      "優しく",
+      "安全だ"
+    ],
+    "custom_word_placeholder": "+ あなた自身の",
+    "skip_prompt": "このプロンプトは飛ばしてください",
+    "type_here": "ここに入力してください"
+  },
+  "save": {
+    "title": "安全な場所を守りましょう",
+    "desc": "あなたの創作物に名前と短い振り返りを与えましょう。",
+    "preview_alt": "あなたの安全な場所のコラージュ",
+    "generating_preview": "プレビュー生成中...",
+    "name_label": "ここを何て呼ぶんだ?",
+    "name_placeholder": "例:『マイ・サンデー・メドウ』",
+    "reflection_label": "なぜこの場所が重要なのでしょうか?(任意)",
+    "reflection_placeholder": "優しい一言...",
+    "privacy_note": "これはプライベートなもので、あなたとセラピストだけが見ることができます。",
+    "button": "セーブ・マイ・セーフ・プレイス",
+    "default_name": "私の安全な場所"
+  },
+  "grounding": {
+    "title": "来てくれたんだね。君は安全だ。",
+    "breathe_info": "4 ·ホールド・4 ·離して・6",
+    "done_message": "今日は自分のために来てくれて、本当におめでとうございます。",
+    "durations": [
+      {
+        "label": "1分",
+        "seconds": "60"
+      },
+      {
+        "label": "3分",
+        "seconds": "180"
+      },
+      {
+        "label": "5分",
+        "seconds": "300"
+      }
+    ],
+    "phases": [
+      "息を吸って",
+      "ホールド",
+      "離せ"
+    ]
+  },
+  "history": {
+    "title": "過去の安全な場所",
+    "no_collages": "まだ保存されたコラージュはありません。アクティビティを完了して最初の1つを救う。"
+  },
+  "common": {
+    "get_started": "Get Started",
+    "start_over": "最初からやり直す",
+    "finish_exit": "終了して退出",
+    "well_done": "Well Done!",
+    "completion_message": "You've successfully completed this activity. Take a moment to appreciate your progress.",
+    "time_to_complete": "完了までの時間",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "loading": "Loading...",
+    "share": "共有",
+    "share_progress": "進捗状況を共有する",
+    "inspire_others": "今日、他の人にインスピレーションを与えましょう",
+    "share_text": "私はTherapyMantraで{{activityName}}を試してみましたが、とても楽しかったです。あなたも試せますよ。Androidアプリ{{androidUrl}}またはiOSアプリ{{iosUrl}}へのリンクをクリックしてください。",
+    "this_activity": "このアクティビティ",
+    "copied": "コピーしました！",
+    "copy_message": "メッセージをコピー",
+    "yes": "Yes",
+    "no": "No",
+    "date": "Date",
+    "continue": "Continue",
+    "step_of": "Step {{current}} of {{total}}",
+    "round_of": "Round {{current}} of {{total}}",
+    "phase_label": "Phase",
+    "rounds_selector": "{{count}} Rounds",
+    "instruction_ready": "Set your rounds and tap play to begin",
+    "instruction_running": "Follow the circle to regulate your breath"
+  },
+  "app_description": "安全な空間キャンバス",
+  "more": "もっと",
+  "breadcrumb": "パン粉",
+  "previous_slide": "前のスライド",
+  "next_slide": "次のスライド",
+  "close": "近い",
+  "previous": "前の",
+  "more_pages": "その他のページ",
+  "pagination": "ページネーション",
+  "go_to_previous_page": "前のページへ",
+  "go_to_next_page": "次のページへ",
+  "toggle_sidebar": "サイドバーの表示/非表示を切り替える",
+  "oops_page_not_found": "おっと！ページが見つかりません",
+  "return_to_home": "ホームに戻る",
+  "phase_label": "Phase",
+  "instruction_ready": "Set your rounds and tap play to begin",
+  "instruction_running": "Follow the circle to regulate your breath",
+  "round_x_of_y": "Round {{current}} of {{total}}",
+  "rounds_selector": "{{count}} Rounds",
+  "yes": "Yes",
+  "no": "No",
+  "date": "Date",
+  "continue": "Continue"
+}
