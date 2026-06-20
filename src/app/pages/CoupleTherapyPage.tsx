@@ -25,7 +25,7 @@ import {
   Brain,
   ChevronRight,
   X,
-  ExternalLink,
+  
   Loader2,
 } from "lucide-react";
 
@@ -93,14 +93,6 @@ function ActivityFrameProvider({ children }: { children: React.ReactNode }) {
                   {target.title}
                 </h3>
               </div>
-              <a
-                href={target.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-[#A2347A] ring-1 ring-[#A2347A]/15 transition hover:bg-white sm:inline-flex"
-              >
-                Open in new tab <ExternalLink className="h-3.5 w-3.5" />
-              </a>
               <button
                 onClick={close}
                 aria-label="Close activity"
@@ -273,9 +265,19 @@ export function CoupleTherapyPage() {
 /* --------------------------------- TopBar --------------------------------- */
 
 function TopBar() {
+  const handleBack = () => {
+    if (typeof window !== "undefined") {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = "/";
+    }
+  };
   return (
     <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 pt-6 sm:px-8 sm:pt-8">
-      <button className="group inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
+      <button
+        type="button"
+        onClick={handleBack}
+        className="group inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+      >
         <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
         Back
       </button>
@@ -349,7 +351,6 @@ function ActivityCard({
   href?: string;
 }) {
   const isMantra = /app\.mantracare\.org/.test(href);
-  const isExternal = href.startsWith("http") && !isMantra;
   const { open } = useActivityFrame();
   const onClick = (e: React.MouseEvent) => {
     if (isMantra) {
@@ -361,8 +362,6 @@ function ActivityCard({
     <a
       href={href}
       onClick={onClick}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
       className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card hover:ring-1 hover:ring-primary/30 cursor-pointer"
     >
       <span
@@ -403,7 +402,6 @@ function AlignmentCard({
   href?: string;
 }) {
   const isMantra = /app\.mantracare\.org/.test(href);
-  const isExternal = href.startsWith("http") && !isMantra;
   const { open } = useActivityFrame();
   const onClick = (e: React.MouseEvent) => {
     if (isMantra) {
@@ -415,8 +413,6 @@ function AlignmentCard({
     <a
       href={href}
       onClick={onClick}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
       className="group relative flex gap-4 overflow-hidden rounded-2xl border border-border bg-card p-5 pl-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card hover:ring-1 hover:ring-primary/30 cursor-pointer"
     >
       <span
