@@ -275,9 +275,12 @@ function ActivityCard({
   tone: Tone;
   href?: string;
 }) {
+  const isExternal = href.startsWith("http");
   return (
     <a
       href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card hover:ring-1 hover:ring-primary/30"
     >
       {/* Focus glow halo */}
