@@ -569,11 +569,13 @@ function CommunicationAlignment() {
       title="Communication and Partnership Alignment"
       desc="Communicate with clarity and build a shared vision for life together."
     >
-      <div className="grid gap-4 sm:grid-cols-2">
-        {items.map((i) => (
-          <AlignmentCard key={i.title} {...i} />
-        ))}
-      </div>
+      <LoadingReveal skeleton={<CardSkeletonGrid count={4} />} delay={650}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {items.map((i) => (
+            <AlignmentCard key={i.title} {...i} />
+          ))}
+        </div>
+      </LoadingReveal>
     </Section>
   );
 }
