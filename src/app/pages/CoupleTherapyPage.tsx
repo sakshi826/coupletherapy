@@ -821,32 +821,46 @@ function RelationshipTools() {
             <CardLink
               key={t.title}
               href={t.href || "#"}
-              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7 block`}
+              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 ring-1 ring-white/60 shadow-[0_14px_50px_-20px_rgba(162,52,122,0.4)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_70px_-22px_rgba(162,52,122,0.5)] hover:ring-white/80 sm:p-7 block`}
             >
+              {/* top inner highlight */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"
+              />
+              {/* glossy upper sheen */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-[28px] opacity-60"
+                style={{
+                  background:
+                    "radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.55) 0%, transparent 60%)",
+                }}
+              />
               <span
                 aria-hidden
                 className={`pointer-events-none absolute -bottom-16 -right-16 h-48 w-48 rounded-full ${toneBlob[t.tone]} blur-3xl`}
               />
-              <div className="flex items-start justify-between">
+              <div className="relative flex items-start justify-between">
                 <div className="relative">
                   <span
                     aria-hidden
-                    className={`absolute inset-0 -m-1 rounded-2xl ${toneStripe[t.tone]} opacity-20 blur-md`}
+                    className={`absolute inset-0 -m-1 rounded-2xl ${toneStripe[t.tone]} opacity-25 blur-md`}
                   />
                   <div
-                    className={`relative inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${toneIconCard[t.tone]}`}
+                    className={`relative inline-flex h-13 w-13 h-[52px] w-[52px] items-center justify-center rounded-2xl ring-1 ring-white/70 shadow-[0_10px_24px_-10px_rgba(162,52,122,0.4)] ${toneIconCard[t.tone]}`}
                   >
                     {t.icon}
                   </div>
                 </div>
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-transform group-hover:scale-105">
-                  Start <ArrowRight className="h-3.5 w-3.5" />
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-semibold tracking-wide text-white shadow-[0_8px_20px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 group-hover:gap-2.5 group-hover:px-5">
+                  Start <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </div>
               </div>
-              <h4 className="mt-6 font-display text-xl text-foreground">
+              <h4 className="relative mt-6 font-display text-xl text-foreground tracking-tight">
                 {t.title}
               </h4>
-              <p className="mt-1 text-sm leading-relaxed text-foreground">
+              <p className="relative mt-1.5 text-sm leading-relaxed text-foreground/85">
                 {t.desc}
               </p>
             </CardLink>
