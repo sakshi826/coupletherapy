@@ -399,7 +399,7 @@ function ActivityCard({
     <CardLink
       href={href}
       onClick={onClick}
-      className="group relative flex flex-col overflow-hidden rounded-3xl bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card hover:ring-1 hover:ring-primary/30 cursor-pointer"
+      className="group relative flex flex-col overflow-hidden rounded-3xl bg-card p-6 shadow-soft ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:ring-primary/25 cursor-pointer"
     >
       <span
         aria-hidden
@@ -450,7 +450,7 @@ function AlignmentCard({
     <CardLink
       href={href}
       onClick={onClick}
-      className="group relative flex gap-4 overflow-hidden rounded-2xl bg-card p-5 pl-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card hover:ring-1 hover:ring-primary/30 cursor-pointer"
+      className="group relative flex gap-4 overflow-hidden rounded-2xl bg-card p-5 pl-6 shadow-soft ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card hover:ring-primary/25 cursor-pointer"
     >
       <span
         aria-hidden
@@ -671,9 +671,13 @@ function GuidedSeries() {
       <div className="space-y-10">
         {groups.map((g) => (
           <div key={g.heading}>
-            <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-black">
-              {g.heading}
-            </h3>
+            <div className="flex items-center gap-3">
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#A2347A]" />
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.22em] text-black">
+                {g.heading}
+              </h3>
+              <span aria-hidden className="h-px flex-1 bg-gradient-to-r from-black/15 to-transparent" />
+            </div>
             <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {g.items.map((i) => (
                 <SeriesRow key={i.title} {...i} />
@@ -702,7 +706,7 @@ function SeriesRow({
   return (
     <CardLink
       href={href}
-      className="group relative flex items-center gap-4 overflow-hidden rounded-xl bg-card p-4 pl-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card hover:ring-1 hover:ring-primary/30"
+      className="group relative flex items-center gap-4 overflow-hidden rounded-2xl bg-card p-4 pl-5 shadow-soft ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card hover:ring-primary/25"
     >
       <span
         aria-hidden
@@ -780,11 +784,15 @@ function RelationshipTools() {
       />
 
       <div className="relative mx-auto max-w-6xl">
-        <div className="mb-8 flex flex-col gap-1 sm:mb-10">
-          <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+        <div className="mb-8 flex flex-col gap-2 sm:mb-10">
+          <div className="flex items-center gap-3">
+            <span aria-hidden className="h-px w-10 bg-gradient-to-r from-[#A2347A] to-transparent" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#A2347A]">Daily Practices</span>
+          </div>
+          <h2 className="font-display text-[32px] leading-[1.05] tracking-[-0.025em] text-foreground sm:text-[44px]">
             Relationship Tools
           </h2>
-          <p className="mt-1 max-w-2xl text-sm leading-relaxed text-foreground">
+          <p className="max-w-2xl pl-[52px] text-[15px] leading-relaxed text-foreground/85">
             Four therapist-designed rituals to deepen your connection, one day at a time.
           </p>
         </div>
@@ -794,7 +802,7 @@ function RelationshipTools() {
             <CardLink
               key={t.title}
               href={t.href || "#"}
-              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7 block`}
+              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:ring-primary/25 sm:p-7 block`}
             >
               <span
                 aria-hidden
@@ -882,7 +890,7 @@ function ResourceLibrary() {
           <CardLink
             key={r.title}
             href={r.href}
-            className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
+            className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card hover:ring-primary/25`}
           >
             <div className="flex items-start justify-between">
               <div
@@ -923,13 +931,16 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="mt-14 sm:mt-20">
-      <div className="mb-6 flex flex-col gap-1">
-        <h2 className="font-display text-2xl text-foreground sm:text-3xl">
-          {title}
-        </h2>
+    <section className="mt-16 sm:mt-24">
+      <div className="mb-7 flex flex-col gap-2 sm:mb-9">
+        <div className="flex items-center gap-3">
+          <span aria-hidden className="h-px w-8 bg-gradient-to-r from-[#A2347A] to-transparent" />
+          <h2 className="font-display text-[26px] leading-[1.1] tracking-[-0.02em] text-foreground sm:text-[34px]">
+            {title}
+          </h2>
+        </div>
         {desc && (
-          <p className="mt-1 max-w-2xl text-sm text-foreground">{desc}</p>
+          <p className="max-w-2xl pl-11 text-[15px] leading-relaxed text-foreground/85">{desc}</p>
         )}
       </div>
       {children}
