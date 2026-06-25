@@ -229,15 +229,15 @@ export function CoupleTherapyPage() {
           style={{ transform: `translate3d(${scrollY * 0.04}px, ${scrollY * -0.18}px, 0)` }}
         />
         <div
-          className="absolute right-[-5%] top-[40%] h-96 w-96 rounded-full bg-lavender/20 blur-[90px] animate-float-medium will-change-transform"
+          className="absolute right-[-5%] top-[40%] h-96 w-96 rounded-full bg-rose/20 blur-[90px] animate-float-medium will-change-transform"
           style={{ transform: `translate3d(${scrollY * -0.05}px, ${scrollY * -0.1}px, 0)` }}
         />
         <div
-          className="absolute bottom-[10%] left-[10%] h-72 w-72 rounded-full bg-sky/20 blur-[70px] animate-float-slow will-change-transform"
+          className="absolute bottom-[10%] left-[10%] h-72 w-72 rounded-full bg-rose/20 blur-[70px] animate-float-slow will-change-transform"
           style={{ transform: `translate3d(${scrollY * 0.06}px, ${scrollY * -0.25}px, 0)` }}
         />
         <div
-          className="absolute bottom-[25%] right-[5%] h-64 w-64 rounded-full bg-sage/22 blur-[75px] animate-float-medium will-change-transform"
+          className="absolute bottom-[25%] right-[5%] h-64 w-64 rounded-full bg-rose/22 blur-[75px] animate-float-medium will-change-transform"
           style={{ transform: `translate3d(${scrollY * -0.03}px, ${scrollY * -0.15}px, 0)` }}
         />
       </div>
