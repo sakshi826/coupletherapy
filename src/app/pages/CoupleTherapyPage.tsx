@@ -399,7 +399,7 @@ function ActivityCard({
     <CardLink
       href={href}
       onClick={onClick}
-      className="group relative flex flex-col overflow-hidden rounded-3xl bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card hover:ring-1 hover:ring-primary/30 cursor-pointer"
+      className="group relative flex flex-col overflow-hidden rounded-3xl bg-card p-6 shadow-soft ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:ring-primary/25 cursor-pointer"
     >
       <span
         aria-hidden
