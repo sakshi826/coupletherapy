@@ -904,7 +904,7 @@ const tools: { icon: React.ReactNode; title: string; desc: string; tone: Tone; h
 
 function RelationshipTools() {
   return (
-    <section className="relative -mx-5 mt-4 overflow-hidden px-5 pt-4 pb-2 sm:-mx-8 sm:mt-6 sm:px-8 sm:pt-6 sm:pb-4">
+    <section id="tools" className="relative -mx-5 mt-4 overflow-hidden px-5 pt-4 pb-2 sm:-mx-8 sm:mt-6 sm:px-8 sm:pt-6 sm:pb-4 scroll-mt-24">
       <div
         aria-hidden
         className="pointer-events-none absolute top-0 left-1/4 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-rose-soft blur-3xl opacity-40"
