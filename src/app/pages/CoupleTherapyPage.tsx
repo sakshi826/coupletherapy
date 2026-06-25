@@ -886,7 +886,7 @@ function ResourceLibrary() {
           <CardLink
             key={r.title}
             href={r.href}
-            className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
+            className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card hover:ring-primary/25`}
           >
             <div className="flex items-start justify-between">
               <div
