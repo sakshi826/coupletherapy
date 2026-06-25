@@ -179,57 +179,9 @@ export function CoupleTherapyPage() {
       className="group/page min-h-screen relative overflow-hidden font-sans"
       style={{
         background:
-          "linear-gradient(160deg, #A2347A 0%, #D9468B 35%, #F06292 65%, #F48FB1 100%)",
+          "linear-gradient(175deg, #FFF0F5 0%, #FAE3EE 30%, #F5D0E0 55%, #E8B8CF 75%, #D9A0BF 100%)",
       }}
     >
-      {/* Strong top lightness fade */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(255,240,250,0.82) 0%, rgba(255,225,240,0.45) 25%, rgba(255,210,235,0.15) 55%, transparent 85%)",
-        }}
-      />
-      {/* Mid-section lightness band */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, transparent 0%, transparent 28%, rgba(255,238,248,0.42) 42%, rgba(255,235,247,0.5) 58%, rgba(255,238,248,0.35) 72%, rgba(255,236,246,0.25) 82%, transparent 95%)",
-        }}
-      />
-      {/* Bottom lightness */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(0deg, rgba(255,240,250,0.82) 0%, rgba(255,225,240,0.45) 25%, rgba(255,210,235,0.15) 55%, transparent 85%)",
-        }}
-      />
-      {/* Soft pink center glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse at 50% 10%, rgba(255,215,235,0.55), transparent 50%)",
-        }}
-      />
-
-
-      {/* Subtle mesh overlay */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
-          backgroundSize: "128px 128px",
-        }}
-      />
 
       <div className="relative z-10">
         <TopBar />
