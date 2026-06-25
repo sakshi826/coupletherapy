@@ -973,15 +973,8 @@ export function LoadingReveal({
         {skeleton}
       </div>
       {ready && (
-        <div>
-          {React.Children.map(children, (child, i) => (
-            <div
-              className="animate-fade-up"
-              style={{ animationDelay: `${i * stagger}ms` }}
-            >
-              {child}
-            </div>
-          ))}
+        <div className="animate-fade-up" style={{ animationDelay: `${stagger}ms` }}>
+          {children}
         </div>
       )}
     </div>
