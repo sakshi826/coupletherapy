@@ -515,21 +515,16 @@ function EmotionalConnection() {
     },
   ];
   return (
-    <div
-      className="relative -mx-5 rounded-[2rem] bg-white/30 px-5 py-10 backdrop-blur-[1px] sm:-mx-8 sm:px-8 sm:py-14"
-      style={{ background: "rgba(255, 245, 252, 0.42)" }}
+    <Section
+      title="Emotional Connection and Trust"
+      desc="Strengthen emotional connection, rebuild trust, and learn healthy relationship repair."
     >
-      <Section
-        title="Emotional Connection and Trust"
-        desc="Strengthen emotional connection, rebuild trust, and learn healthy relationship repair."
-      >
-        <div className="grid gap-4 sm:grid-cols-2">
-          {items.map((i) => (
-            <ActivityCard key={i.title} {...i} />
-          ))}
-        </div>
-      </Section>
-    </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {items.map((i) => (
+          <ActivityCard key={i.title} {...i} />
+        ))}
+      </div>
+    </Section>
   );
 }
 
