@@ -399,25 +399,11 @@ function ActivityCard({
     <CardLink
       href={href}
       onClick={onClick}
-      className="group relative flex flex-col overflow-hidden rounded-3xl bg-white/70 backdrop-blur-xl p-6 ring-1 ring-white/60 shadow-[0_10px_40px_-18px_rgba(162,52,122,0.35)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_60px_-20px_rgba(162,52,122,0.45)] hover:ring-[#A2347A]/30 cursor-pointer"
+      className="group relative flex flex-col overflow-hidden rounded-3xl bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card hover:ring-1 hover:ring-primary/30 cursor-pointer"
     >
-      {/* top inner highlight */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent"
-      />
-      {/* hover sheen */}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{
-          background:
-            "radial-gradient(120% 80% at 0% 0%, rgba(255,255,255,0.6) 0%, transparent 50%), radial-gradient(120% 80% at 100% 100%, rgba(255,210,232,0.45) 0%, transparent 55%)",
-        }}
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100"
         style={{
           background:
             "radial-gradient(closest-side, rgba(255,255,255,0.7), rgba(255,210,232,0.35) 55%, transparent 80%)",
@@ -425,16 +411,14 @@ function ActivityCard({
       />
       <div className="relative flex items-start justify-between">
         <div
-          className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl ring-1 ring-white/70 shadow-[0_8px_20px_-8px_rgba(162,52,122,0.35)] ${toneStyles[tone]}`}
+          className={`inline-flex h-14 w-14 items-center justify-center rounded-full ring-8 ${toneRing[tone]} ${toneStyles[tone]}`}
         >
           {icon}
         </div>
-        <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/80 ring-1 ring-white/70 text-foreground/70 transition-all duration-300 group-hover:bg-foreground group-hover:text-white group-hover:translate-x-0.5">
-          <ArrowRight className="h-4 w-4" />
-        </span>
+        <ArrowRight className="mt-2 h-5 w-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-foreground" />
       </div>
-      <h4 className="relative mt-6 font-display text-lg text-foreground tracking-tight">{title}</h4>
-      <p className="relative mt-1.5 flex-1 text-sm leading-relaxed text-foreground/85">
+      <h4 className="relative mt-6 font-display text-lg text-foreground">{title}</h4>
+      <p className="relative mt-1 flex-1 text-sm leading-relaxed text-foreground">
         {desc}
       </p>
     </CardLink>
@@ -466,16 +450,11 @@ function AlignmentCard({
     <CardLink
       href={href}
       onClick={onClick}
-      className="group relative flex gap-4 overflow-hidden rounded-2xl bg-white/70 backdrop-blur-xl p-5 pl-6 ring-1 ring-white/60 shadow-[0_10px_36px_-18px_rgba(162,52,122,0.32)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_22px_50px_-22px_rgba(162,52,122,0.42)] hover:ring-[#A2347A]/30 cursor-pointer"
+      className="group relative flex gap-4 overflow-hidden rounded-2xl bg-card p-5 pl-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card hover:ring-1 hover:ring-primary/30 cursor-pointer"
     >
-      {/* top inner highlight */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -inset-5 -z-10 rounded-[1.75rem] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute -inset-5 -z-10 rounded-[1.75rem] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100"
         style={{
           background:
             "radial-gradient(closest-side, rgba(255,255,255,0.65), rgba(255,210,232,0.3) 55%, transparent 80%)",
@@ -483,19 +462,19 @@ function AlignmentCard({
       />
       <span
         aria-hidden
-        className={`absolute left-0 top-3 bottom-3 w-1 rounded-full ${toneStripe[tone]} transition-all duration-300 group-hover:top-1 group-hover:bottom-1 group-hover:w-1.5`}
+        className={`absolute left-0 top-0 h-full w-1.5 ${toneStripe[tone]} transition-all group-hover:w-2`}
       />
       <div
-        className={`mt-0.5 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ring-1 ring-white/70 shadow-[0_6px_18px_-8px_rgba(162,52,122,0.3)] ${toneStyles[tone]}`}
+        className={`mt-0.5 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 border-current/20 ${toneStyles[tone]}`}
       >
         {icon}
       </div>
       <div className="flex-1">
         <div className="flex items-start justify-between gap-3">
-          <h4 className="font-display text-lg text-foreground tracking-tight">{title}</h4>
-          <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-foreground" />
+          <h4 className="font-display text-lg text-foreground">{title}</h4>
+          <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
         </div>
-        <p className="mt-1 text-sm leading-relaxed text-foreground/85">
+        <p className="mt-1 text-sm leading-relaxed text-foreground">
           {desc}
         </p>
       </div>
@@ -723,15 +702,11 @@ function SeriesRow({
   return (
     <CardLink
       href={href}
-      className="group relative flex items-center gap-4 overflow-hidden rounded-2xl bg-white/70 backdrop-blur-xl p-4 pl-5 ring-1 ring-white/60 shadow-[0_8px_28px_-16px_rgba(162,52,122,0.3)] transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-20px_rgba(162,52,122,0.4)] hover:ring-[#A2347A]/25"
+      className="group relative flex items-center gap-4 overflow-hidden rounded-xl bg-card p-4 pl-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card hover:ring-1 hover:ring-primary/30"
     >
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -inset-4 -z-10 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute -inset-4 -z-10 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100"
         style={{
           background:
             "radial-gradient(closest-side, rgba(255,255,255,0.6), rgba(255,210,232,0.28) 55%, transparent 80%)",
@@ -739,24 +714,22 @@ function SeriesRow({
       />
       <span
         aria-hidden
-        className={`absolute left-0 top-3 bottom-3 w-0 rounded-full ${toneStripe[tone]} transition-all duration-300 group-hover:w-1`}
+        className={`absolute left-0 top-0 h-full w-0 ${toneStripe[tone]} transition-all duration-300 group-hover:w-1.5`}
       />
       <div
-        className={`relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ring-1 ring-white/70 shadow-[0_6px_16px_-8px_rgba(162,52,122,0.3)] ${toneStyles[tone]}`}
+        className={`relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${toneStyles[tone]}`}
       >
         {icon}
       </div>
       <div className="min-w-0 flex-1">
-        <div className="truncate text-sm font-semibold text-foreground tracking-tight">
+        <div className="truncate text-sm font-semibold text-foreground">
           {title}
         </div>
-        <div className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-foreground/80">
+        <div className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-foreground">
           {desc}
         </div>
       </div>
-      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 ring-1 ring-white/70 text-foreground/70 transition-all duration-300 group-hover:bg-foreground group-hover:text-white">
-        <ChevronRight className="h-4 w-4" />
-      </span>
+      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
     </CardLink>
   );
 }
@@ -821,46 +794,32 @@ function RelationshipTools() {
             <CardLink
               key={t.title}
               href={t.href || "#"}
-              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 ring-1 ring-white/60 shadow-[0_14px_50px_-20px_rgba(162,52,122,0.4)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_70px_-22px_rgba(162,52,122,0.5)] hover:ring-white/80 sm:p-7 block`}
+              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7 block`}
             >
-              {/* top inner highlight */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"
-              />
-              {/* glossy upper sheen */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-[28px] opacity-60"
-                style={{
-                  background:
-                    "radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.55) 0%, transparent 60%)",
-                }}
-              />
               <span
                 aria-hidden
                 className={`pointer-events-none absolute -bottom-16 -right-16 h-48 w-48 rounded-full ${toneBlob[t.tone]} blur-3xl`}
               />
-              <div className="relative flex items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="relative">
                   <span
                     aria-hidden
-                    className={`absolute inset-0 -m-1 rounded-2xl ${toneStripe[t.tone]} opacity-25 blur-md`}
+                    className={`absolute inset-0 -m-1 rounded-2xl ${toneStripe[t.tone]} opacity-20 blur-md`}
                   />
                   <div
-                    className={`relative inline-flex h-13 w-13 h-[52px] w-[52px] items-center justify-center rounded-2xl ring-1 ring-white/70 shadow-[0_10px_24px_-10px_rgba(162,52,122,0.4)] ${toneIconCard[t.tone]}`}
+                    className={`relative inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${toneIconCard[t.tone]}`}
                   >
                     {t.icon}
                   </div>
                 </div>
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-semibold tracking-wide text-white shadow-[0_8px_20px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 group-hover:gap-2.5 group-hover:px-5">
-                  Start <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-transform group-hover:scale-105">
+                  Start <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </div>
-              <h4 className="relative mt-6 font-display text-xl text-foreground tracking-tight">
+              <h4 className="mt-6 font-display text-xl text-foreground">
                 {t.title}
               </h4>
-              <p className="relative mt-1.5 text-sm leading-relaxed text-foreground/85">
+              <p className="mt-1 text-sm leading-relaxed text-foreground">
                 {t.desc}
               </p>
             </CardLink>
@@ -923,32 +882,21 @@ function ResourceLibrary() {
           <CardLink
             key={r.title}
             href={r.href}
-            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br ${tones[r.tone]} p-6 ring-1 ring-white/60 shadow-[0_12px_40px_-18px_rgba(162,52,122,0.35)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_-22px_rgba(162,52,122,0.45)] hover:ring-white/80`}
+            className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
           >
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"
-            />
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-3xl opacity-55"
-              style={{
-                background:
-                  "radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.55) 0%, transparent 60%)",
-              }}
-            />
-            <div className="relative flex items-start justify-between">
+            <div className="flex items-start justify-between">
               <div
-                className={`inline-flex h-[52px] w-[52px] items-center justify-center rounded-2xl ring-1 ring-white/70 shadow-[0_10px_24px_-10px_rgba(162,52,122,0.35)] ${iconTones[r.tone]}`}
+                className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${iconTones[r.tone]}`}
               >
                 {r.icon}
               </div>
             </div>
-            <h4 className="relative mt-5 font-display text-2xl text-foreground tracking-tight">
+            <h4 className="mt-5 font-display text-2xl text-foreground">
               {r.title}
             </h4>
-            <div className="relative mt-6 inline-flex items-center gap-1.5 rounded-full bg-white/70 px-3.5 py-1.5 ring-1 ring-white/70 text-sm font-semibold text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-white group-hover:gap-2.5">
-              Explore <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground">
+              Explore{" "}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </div>
           </CardLink>
         ))}
