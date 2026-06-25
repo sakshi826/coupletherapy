@@ -519,13 +519,11 @@ function EmotionalConnection() {
       title="Emotional Connection and Trust"
       desc="Strengthen emotional connection, rebuild trust, and learn healthy relationship repair."
     >
-      <LoadingReveal skeleton={<CardSkeletonGrid count={4} />} delay={500}>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {items.map((i) => (
-            <ActivityCard key={i.title} {...i} />
-          ))}
-        </div>
-      </LoadingReveal>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {items.map((i) => (
+          <ActivityCard key={i.title} {...i} />
+        ))}
+      </div>
     </Section>
   );
 }
@@ -569,13 +567,11 @@ function CommunicationAlignment() {
       title="Communication and Partnership Alignment"
       desc="Communicate with clarity and build a shared vision for life together."
     >
-      <LoadingReveal skeleton={<CardSkeletonGrid count={4} />} delay={650}>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {items.map((i) => (
-            <AlignmentCard key={i.title} {...i} />
-          ))}
-        </div>
-      </LoadingReveal>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {items.map((i) => (
+          <AlignmentCard key={i.title} {...i} />
+        ))}
+      </div>
     </Section>
   );
 }
@@ -672,22 +668,20 @@ function GuidedSeries() {
       title="Guided Series"
       desc="Therapist-led journeys grouped by what you and your partner are working through."
     >
-      <LoadingReveal skeleton={<SeriesSkeletonGroup />} delay={750}>
-        <div className="space-y-10">
-          {groups.map((g) => (
-            <div key={g.heading}>
-              <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-black">
-                {g.heading}
-              </h3>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {g.items.map((i) => (
-                  <SeriesRow key={i.title} {...i} />
-                ))}
-              </div>
+      <div className="space-y-10">
+        {groups.map((g) => (
+          <div key={g.heading}>
+            <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-black">
+              {g.heading}
+            </h3>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {g.items.map((i) => (
+                <SeriesRow key={i.title} {...i} />
+              ))}
             </div>
-          ))}
-        </div>
-      </LoadingReveal>
+          </div>
+        ))}
+      </div>
     </Section>
   );
 }
@@ -795,44 +789,42 @@ function RelationshipTools() {
           </p>
         </div>
 
-        <LoadingReveal skeleton={<CardSkeletonGrid count={4} height="h-48" rounded="rounded-[28px]" />} delay={400}>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {tools.map((t) => (
-              <CardLink
-                key={t.title}
-                href={t.href || "#"}
-                className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7 block`}
-              >
-                <span
-                  aria-hidden
-                  className={`pointer-events-none absolute -bottom-16 -right-16 h-48 w-48 rounded-full ${toneBlob[t.tone]} blur-3xl`}
-                />
-                <div className="flex items-start justify-between">
-                  <div className="relative">
-                    <span
-                      aria-hidden
-                      className={`absolute inset-0 -m-1 rounded-2xl ${toneStripe[t.tone]} opacity-20 blur-md`}
-                    />
-                    <div
-                      className={`relative inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${toneIconCard[t.tone]}`}
-                    >
-                      {t.icon}
-                    </div>
-                  </div>
-                  <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-transform group-hover:scale-105">
-                    Start <ArrowRight className="h-3.5 w-3.5" />
+        <div className="grid gap-4 sm:grid-cols-2">
+          {tools.map((t) => (
+            <CardLink
+              key={t.title}
+              href={t.href || "#"}
+              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7 block`}
+            >
+              <span
+                aria-hidden
+                className={`pointer-events-none absolute -bottom-16 -right-16 h-48 w-48 rounded-full ${toneBlob[t.tone]} blur-3xl`}
+              />
+              <div className="flex items-start justify-between">
+                <div className="relative">
+                  <span
+                    aria-hidden
+                    className={`absolute inset-0 -m-1 rounded-2xl ${toneStripe[t.tone]} opacity-20 blur-md`}
+                  />
+                  <div
+                    className={`relative inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${toneIconCard[t.tone]}`}
+                  >
+                    {t.icon}
                   </div>
                 </div>
-                <h4 className="mt-6 font-display text-xl text-foreground">
-                  {t.title}
-                </h4>
-                <p className="mt-1 text-sm leading-relaxed text-foreground">
-                  {t.desc}
-                </p>
-              </CardLink>
-            ))}
-          </div>
-        </LoadingReveal>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-transform group-hover:scale-105">
+                  Start <ArrowRight className="h-3.5 w-3.5" />
+                </div>
+              </div>
+              <h4 className="mt-6 font-display text-xl text-foreground">
+                {t.title}
+              </h4>
+              <p className="mt-1 text-sm leading-relaxed text-foreground">
+                {t.desc}
+              </p>
+            </CardLink>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -885,32 +877,30 @@ function ResourceLibrary() {
       title="Read and Reflect"
       desc="Curated articles, stories, and insights to grow closer together."
     >
-      <LoadingReveal skeleton={<CardSkeletonGrid count={4} height="h-40" />} delay={850}>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {resources.map((r) => (
-            <CardLink
-              key={r.title}
-              href={r.href}
-              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
-            >
-              <div className="flex items-start justify-between">
-                <div
-                  className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${iconTones[r.tone]}`}
-                >
-                  {r.icon}
-                </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {resources.map((r) => (
+          <CardLink
+            key={r.title}
+            href={r.href}
+            className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
+          >
+            <div className="flex items-start justify-between">
+              <div
+                className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${iconTones[r.tone]}`}
+              >
+                {r.icon}
               </div>
-              <h4 className="mt-5 font-display text-2xl text-foreground">
-                {r.title}
-              </h4>
-              <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground">
-                Explore{" "}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </div>
-            </CardLink>
-          ))}
-        </div>
-      </LoadingReveal>
+            </div>
+            <h4 className="mt-5 font-display text-2xl text-foreground">
+              {r.title}
+            </h4>
+            <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground">
+              Explore{" "}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </div>
+          </CardLink>
+        ))}
+      </div>
     </Section>
   );
 }
@@ -946,106 +936,3 @@ function Section({
     </section>
   );
 }
-
-/* ---------------------- Skeleton / Loading transitions -------------------- */
-
-function useDelayedReady(delay = 550) {
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    const t = setTimeout(() => setReady(true), delay);
-    return () => clearTimeout(t);
-  }, [delay]);
-  return ready;
-}
-
-export function LoadingReveal({
-  skeleton,
-  children,
-  delay = 550,
-  stagger = 60,
-}: {
-  skeleton: React.ReactNode;
-  children: React.ReactNode;
-  delay?: number;
-  stagger?: number;
-}) {
-  const ready = useDelayedReady(delay);
-  return (
-    <div className="relative">
-      <div
-        aria-hidden={ready}
-        className={`transition-opacity duration-500 ease-out ${
-          ready ? "pointer-events-none absolute inset-0 opacity-0" : "opacity-100"
-        }`}
-      >
-        {skeleton}
-      </div>
-      {ready && (
-        <div className="animate-fade-up" style={{ animationDelay: `${stagger}ms` }}>
-          {children}
-        </div>
-      )}
-    </div>
-  );
-}
-
-export function CardSkeletonGrid({
-  count = 4,
-  height = "h-44",
-  rounded = "rounded-2xl",
-}: {
-  count?: number;
-  height?: string;
-  rounded?: string;
-}) {
-  return (
-    <div className="grid gap-4 sm:grid-cols-2">
-      {Array.from({ length: count }).map((_, i) => (
-        <div
-          key={i}
-          className={`relative overflow-hidden ${rounded} ${height} bg-white/55 ring-1 ring-white/60 shadow-soft`}
-        >
-          <div className="absolute inset-0 skeleton-shimmer opacity-70" />
-          <div className="relative flex h-full flex-col gap-3 p-6">
-            <div className="h-12 w-12 rounded-2xl bg-white/70" />
-            <div className="mt-auto space-y-2">
-              <div className="h-4 w-3/4 rounded-full bg-white/75" />
-              <div className="h-3 w-5/6 rounded-full bg-white/60" />
-              <div className="h-3 w-2/3 rounded-full bg-white/50" />
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export function SeriesSkeletonGroup() {
-  return (
-    <div className="space-y-10">
-      {Array.from({ length: 3 }).map((_, g) => (
-        <div key={g} className="space-y-3">
-          <div className="h-3 w-40 rounded-full bg-white/60" />
-          <div className="grid gap-3 sm:grid-cols-2">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <div
-                key={i}
-                className="relative h-20 overflow-hidden rounded-2xl bg-white/55 ring-1 ring-white/60 shadow-soft"
-              >
-                <div className="absolute inset-0 skeleton-shimmer opacity-70" />
-                <div className="relative flex h-full items-center gap-3 p-4">
-                  <div className="h-12 w-12 rounded-2xl bg-white/70" />
-                  <div className="flex-1 space-y-2">
-                    <div className="h-3 w-3/4 rounded-full bg-white/75" />
-                    <div className="h-2.5 w-5/6 rounded-full bg-white/55" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
