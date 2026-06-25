@@ -723,11 +723,15 @@ function SeriesRow({
   return (
     <CardLink
       href={href}
-      className="group relative flex items-center gap-4 overflow-hidden rounded-xl bg-card p-4 pl-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card hover:ring-1 hover:ring-primary/30"
+      className="group relative flex items-center gap-4 overflow-hidden rounded-2xl bg-white/70 backdrop-blur-xl p-4 pl-5 ring-1 ring-white/60 shadow-[0_8px_28px_-16px_rgba(162,52,122,0.3)] transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-20px_rgba(162,52,122,0.4)] hover:ring-[#A2347A]/25"
     >
       <span
         aria-hidden
-        className="pointer-events-none absolute -inset-4 -z-10 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -inset-4 -z-10 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
         style={{
           background:
             "radial-gradient(closest-side, rgba(255,255,255,0.6), rgba(255,210,232,0.28) 55%, transparent 80%)",
@@ -735,22 +739,24 @@ function SeriesRow({
       />
       <span
         aria-hidden
-        className={`absolute left-0 top-0 h-full w-0 ${toneStripe[tone]} transition-all duration-300 group-hover:w-1.5`}
+        className={`absolute left-0 top-3 bottom-3 w-0 rounded-full ${toneStripe[tone]} transition-all duration-300 group-hover:w-1`}
       />
       <div
-        className={`relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${toneStyles[tone]}`}
+        className={`relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ring-1 ring-white/70 shadow-[0_6px_16px_-8px_rgba(162,52,122,0.3)] ${toneStyles[tone]}`}
       >
         {icon}
       </div>
       <div className="min-w-0 flex-1">
-        <div className="truncate text-sm font-semibold text-foreground">
+        <div className="truncate text-sm font-semibold text-foreground tracking-tight">
           {title}
         </div>
-        <div className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-foreground">
+        <div className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-foreground/80">
           {desc}
         </div>
       </div>
-      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
+      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 ring-1 ring-white/70 text-foreground/70 transition-all duration-300 group-hover:bg-foreground group-hover:text-white">
+        <ChevronRight className="h-4 w-4" />
+      </span>
     </CardLink>
   );
 }
