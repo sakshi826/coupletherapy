@@ -936,3 +936,113 @@ function Section({
     </section>
   );
 }
+
+/* ---------------------- Skeleton / Loading transitions -------------------- */
+
+function useDelayedReady(delay = 550) {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setReady(true), delay);
+    return () => clearTimeout(t);
+  }, [delay]);
+  return ready;
+}
+
+export function LoadingReveal({
+  skeleton,
+  children,
+  delay = 550,
+  stagger = 60,
+}: {
+  skeleton: React.ReactNode;
+  children: React.ReactNode;
+  delay?: number;
+  stagger?: number;
+}) {
+  const ready = useDelayedReady(delay);
+  return (
+    <div className="relative">
+      <div
+        aria-hidden={ready}
+        className={`transition-opacity duration-500 ease-out ${
+          ready ? "pointer-events-none absolute inset-0 opacity-0" : "opacity-100"
+        }`}
+      >
+        {skeleton}
+      </div>
+      {ready && (
+        <div>
+          {React.Children.map(children, (child, i) => (
+            <div
+              className="animate-fade-up"
+              style={{ animationDelay: `${i * stagger}ms` }}
+            >
+              {child}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function CardSkeletonGrid({
+  count = 4,
+  height = "h-44",
+  rounded = "rounded-2xl",
+}: {
+  count?: number;
+  height?: string;
+  rounded?: string;
+}) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {Array.from({ length: count }).map((_, i) => (
+        <div
+          key={i}
+          className={`relative overflow-hidden ${rounded} ${height} bg-white/55 ring-1 ring-white/60 shadow-soft`}
+        >
+          <div className="absolute inset-0 skeleton-shimmer opacity-70" />
+          <div className="relative flex h-full flex-col gap-3 p-6">
+            <div className="h-12 w-12 rounded-2xl bg-white/70" />
+            <div className="mt-auto space-y-2">
+              <div className="h-4 w-3/4 rounded-full bg-white/75" />
+              <div className="h-3 w-5/6 rounded-full bg-white/60" />
+              <div className="h-3 w-2/3 rounded-full bg-white/50" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function SeriesSkeletonGroup() {
+  return (
+    <div className="space-y-10">
+      {Array.from({ length: 3 }).map((_, g) => (
+        <div key={g} className="space-y-3">
+          <div className="h-3 w-40 rounded-full bg-white/60" />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <div
+                key={i}
+                className="relative h-20 overflow-hidden rounded-2xl bg-white/55 ring-1 ring-white/60 shadow-soft"
+              >
+                <div className="absolute inset-0 skeleton-shimmer opacity-70" />
+                <div className="relative flex h-full items-center gap-3 p-4">
+                  <div className="h-12 w-12 rounded-2xl bg-white/70" />
+                  <div className="flex-1 space-y-2">
+                    <div className="h-3 w-3/4 rounded-full bg-white/75" />
+                    <div className="h-2.5 w-5/6 rounded-full bg-white/55" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
