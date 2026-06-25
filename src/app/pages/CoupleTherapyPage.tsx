@@ -885,30 +885,32 @@ function ResourceLibrary() {
       title="Read and Reflect"
       desc="Curated articles, stories, and insights to grow closer together."
     >
-      <div className="grid gap-4 sm:grid-cols-2">
-        {resources.map((r) => (
-          <CardLink
-            key={r.title}
-            href={r.href}
-            className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
-          >
-            <div className="flex items-start justify-between">
-              <div
-                className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${iconTones[r.tone]}`}
-              >
-                {r.icon}
+      <LoadingReveal skeleton={<CardSkeletonGrid count={4} height="h-40" />} delay={850}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {resources.map((r) => (
+            <CardLink
+              key={r.title}
+              href={r.href}
+              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tones[r.tone]} p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card`}
+            >
+              <div className="flex items-start justify-between">
+                <div
+                  className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl shadow-soft ${iconTones[r.tone]}`}
+                >
+                  {r.icon}
+                </div>
               </div>
-            </div>
-            <h4 className="mt-5 font-display text-2xl text-foreground">
-              {r.title}
-            </h4>
-            <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground">
-              Explore{" "}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </div>
-          </CardLink>
-        ))}
-      </div>
+              <h4 className="mt-5 font-display text-2xl text-foreground">
+                {r.title}
+              </h4>
+              <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground">
+                Explore{" "}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </div>
+            </CardLink>
+          ))}
+        </div>
+      </LoadingReveal>
     </Section>
   );
 }
