@@ -798,7 +798,7 @@ function RelationshipTools() {
             <CardLink
               key={t.title}
               href={t.href || "#"}
-              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:p-7 block`}
+              className={`group relative isolate overflow-hidden rounded-[28px] bg-gradient-to-br ${toneGradients[t.tone]} p-6 shadow-soft ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:ring-primary/25 sm:p-7 block`}
             >
               <span
                 aria-hidden
