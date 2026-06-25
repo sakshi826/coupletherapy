@@ -706,34 +706,22 @@ function SeriesRow({
   return (
     <CardLink
       href={href}
-      className="group relative flex items-center gap-4 overflow-hidden rounded-xl bg-card p-4 pl-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card hover:ring-1 hover:ring-primary/30"
+      className="group relative flex items-center gap-4 rounded-2xl bg-white p-4 shadow-[0_2px_10px_-2px_rgba(120,40,90,0.10)] ring-1 ring-black/[0.04] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-6px_rgba(120,40,90,0.18)]"
     >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -inset-4 -z-10 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(255,255,255,0.6), rgba(255,210,232,0.28) 55%, transparent 80%)",
-        }}
-      />
-      <span
-        aria-hidden
-        className={`absolute left-0 top-0 h-full w-0 ${toneStripe[tone]} transition-all duration-300 group-hover:w-1.5`}
-      />
       <div
-        className={`relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${toneStyles[tone]}`}
+        className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${toneStyles[tone]}`}
       >
         {icon}
       </div>
       <div className="min-w-0 flex-1">
-        <div className="truncate text-sm font-semibold text-foreground">
+        <div className="truncate text-[15px] font-semibold text-foreground">
           {title}
         </div>
-        <div className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-foreground">
+        <div className="mt-1 line-clamp-2 text-[13px] leading-snug text-muted-foreground">
           {desc}
         </div>
       </div>
-      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
+      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground/70 transition-transform group-hover:translate-x-0.5" />
     </CardLink>
   );
 }
