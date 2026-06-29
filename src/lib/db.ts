@@ -25,8 +25,8 @@ export async function dbRequest<T = any>(query: string, params: any[] = []): Pro
     const result = await (sql as any)(query, params);
     return Array.isArray(result) ? result : (result.rows || []);
   } catch (error) {
-    console.error('Unified DB Error:', error);
-    throw error;
+    console.error('Unified DB Error (graceful fallback):', error);
+    return [];
   }
 }
 
