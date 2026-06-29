@@ -11,6 +11,14 @@ RUN npm install --legacy-peer-deps
 COPY . .
 RUN NITRO_PRESET=node-server npm run build
 
+# Rewrite all "/assets/ references to "/coupletherapy/assets/ in both
+# the SSR server bundle (so injected HTML has correct paths) and the
+# client bundles (so dynamic chunk imports use correct paths).
+RUN find .output -type f \( -name "*.mjs" -o -name "*.js" \) \
+      -exec sed -i 's|"/assets/|"/coupletherapy/assets/|g' {} + && \
+    find .output -type f -name "*.css" \
+      -exec sed -i 's|url(/assets/|url(/coupletherapy/assets/|g' {} +
+
 # ───────────────────────────────────────────────────────────
 # Stage 2 – Production runtime
 #   nginx  → serves static assets with correct MIME types (port 3000)
