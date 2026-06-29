@@ -6,7 +6,7 @@ import "../styles/theme.css";
 // Lazy load the React Router app so it doesn't execute browser-only code (like createBrowserRouter) on the server side
 const App = lazy(() => import("../app/App"));
 
-export const Route = createFileRoute("/couple_module/$")({
+export const Route = createFileRoute("/coupletherapy/")({
   component: CoupleModulePage,
 });
 

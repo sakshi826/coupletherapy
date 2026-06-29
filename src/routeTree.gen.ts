@@ -10,53 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as Couple_moduleIndexRouteImport } from './routes/couple_module.index'
-import { Route as Couple_moduleSplatRouteImport } from './routes/couple_module.$'
+import { Route as CoupletherapyIndexRouteImport } from './routes/coupletherapy.index'
+import { Route as CoupletherapySplatRouteImport } from './routes/coupletherapy.$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Couple_moduleIndexRoute = Couple_moduleIndexRouteImport.update({
-  id: '/couple_module/',
-  path: '/couple_module/',
+const CoupletherapyIndexRoute = CoupletherapyIndexRouteImport.update({
+  id: '/coupletherapy/',
+  path: '/coupletherapy/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Couple_moduleSplatRoute = Couple_moduleSplatRouteImport.update({
-  id: '/couple_module/$',
-  path: '/couple_module/$',
+const CoupletherapySplatRoute = CoupletherapySplatRouteImport.update({
+  id: '/coupletherapy/$',
+  path: '/coupletherapy/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/couple_module/$': typeof Couple_moduleSplatRoute
-  '/couple_module/': typeof Couple_moduleIndexRoute
+  '/coupletherapy/$': typeof CoupletherapySplatRoute
+  '/coupletherapy/': typeof CoupletherapyIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/couple_module/$': typeof Couple_moduleSplatRoute
-  '/couple_module': typeof Couple_moduleIndexRoute
+  '/coupletherapy/$': typeof CoupletherapySplatRoute
+  '/coupletherapy': typeof CoupletherapyIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/couple_module/$': typeof Couple_moduleSplatRoute
-  '/couple_module/': typeof Couple_moduleIndexRoute
+  '/coupletherapy/$': typeof CoupletherapySplatRoute
+  '/coupletherapy/': typeof CoupletherapyIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/couple_module/$' | '/couple_module/'
+  fullPaths: '/' | '/coupletherapy/$' | '/coupletherapy/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/couple_module/$' | '/couple_module'
-  id: '__root__' | '/' | '/couple_module/$' | '/couple_module/'
+  to: '/' | '/coupletherapy/$' | '/coupletherapy'
+  id: '__root__' | '/' | '/coupletherapy/$' | '/coupletherapy/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  Couple_moduleSplatRoute: typeof Couple_moduleSplatRoute
-  Couple_moduleIndexRoute: typeof Couple_moduleIndexRoute
+  CoupletherapySplatRoute: typeof CoupletherapySplatRoute
+  CoupletherapyIndexRoute: typeof CoupletherapyIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,18 +68,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/couple_module/': {
-      id: '/couple_module/'
-      path: '/couple_module'
-      fullPath: '/couple_module/'
-      preLoaderRoute: typeof Couple_moduleIndexRouteImport
+    '/coupletherapy/': {
+      id: '/coupletherapy/'
+      path: '/coupletherapy'
+      fullPath: '/coupletherapy/'
+      preLoaderRoute: typeof CoupletherapyIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/couple_module/$': {
-      id: '/couple_module/$'
-      path: '/couple_module/$'
-      fullPath: '/couple_module/$'
-      preLoaderRoute: typeof Couple_moduleSplatRouteImport
+    '/coupletherapy/$': {
+      id: '/coupletherapy/$'
+      path: '/coupletherapy/$'
+      fullPath: '/coupletherapy/$'
+      preLoaderRoute: typeof CoupletherapySplatRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -87,8 +87,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  Couple_moduleSplatRoute: Couple_moduleSplatRoute,
-  Couple_moduleIndexRoute: Couple_moduleIndexRoute,
+  CoupletherapySplatRoute: CoupletherapySplatRoute,
+  CoupletherapyIndexRoute: CoupletherapyIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

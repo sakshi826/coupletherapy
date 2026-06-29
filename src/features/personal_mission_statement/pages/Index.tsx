@@ -23,7 +23,7 @@ const Index = () => {
 
   const getBackAction = () => {
     switch (screen) {
-      case 0: return () => window.location.href = "/couple_module/";
+      case 0: return () => window.location.href = "/coupletherapy/";
       case 1: return () => goTo(0);
       case 2: return () => goTo(1);
       case 3: return () => goTo(2);

@@ -35,7 +35,7 @@ RUN chmod +x /docker-entrypoint.sh
 
 ENV NODE_ENV=production
 
-# nginx listens on 3000 (mapped from host)
-EXPOSE 3000
+# nginx listens on port 80
+EXPOSE 80
 
 CMD ["/docker-entrypoint.sh"]

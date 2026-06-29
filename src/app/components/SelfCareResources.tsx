@@ -155,8 +155,8 @@ function CardLink({
       </a>
     );
   }
-  const cleanHref = href.startsWith("/couple_module")
-    ? href.replace("/couple_module", "")
+  const cleanHref = href.startsWith("/coupletherapy")
+    ? href.replace("/coupletherapy", "")
     : href;
   return (
     <Link to={cleanHref} className={className} onMouseEnter={onMouseEnter}>
@@ -329,28 +329,28 @@ function RelationshipTools({ onHover }: { onHover: (href: string) => void }) {
       title: "Relationship Values Check-In",
       desc: "Track emotional connection and satisfaction together.",
       tone: "rose",
-      href: "/couple_module/tools/know-your-values",
+      href: "/coupletherapy/tools/know-your-values",
     },
     {
       icon: <Star className="h-5 w-5" />,
       title: "Daily Appreciation Practice",
       desc: "Build the habit of noticing and naming the good.",
       tone: "sand",
-      href: "/couple_module/trackers/gratitude-tracker",
+      href: "/coupletherapy/trackers/gratitude-tracker",
     },
     {
       icon: <TrendingUp className="h-5 w-5" />,
       title: "Relationship Connection Tracker",
       desc: "Monitor closeness, intimacy, and warmth over time.",
       tone: "sage",
-      href: "/couple_module/trackers/relationship-connection-tracker",
+      href: "/coupletherapy/trackers/relationship-connection-tracker",
     },
     {
       icon: <Compass className="h-5 w-5" />,
       title: "Shared Relationship Vision",
       desc: "Align your future goals, values, and dreams.",
       tone: "lavender",
-      href: "/couple_module/tools/shared-relationship-vision",
+      href: "/coupletherapy/tools/shared-relationship-vision",
     },
   ];
 

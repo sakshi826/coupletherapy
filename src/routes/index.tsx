@@ -9,6 +9,6 @@ import {
 
 export const Route = createFileRoute("/")({
   beforeLoad: () => {
-    throw redirect({ to: "/couple_module" });
+    throw redirect({ to: "/coupletherapy" });
   },
 });

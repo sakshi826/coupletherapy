@@ -342,8 +342,8 @@ function CardLink({
       </a>
     );
   }
-  const cleanHref = href.startsWith("/couple_module")
-    ? href.replace("/couple_module", "")
+  const cleanHref = href.startsWith("/coupletherapy")
+    ? href.replace("/coupletherapy", "")
     : href;
   return (
     <Link to={cleanHref} onClick={onClick} className={`${className || ""} no-underline`}>
@@ -569,21 +569,21 @@ function GuidedSeries() {
           title: "Relationship Patterns Unpacked",
           desc: "Explore recurring conflict cycles and emotional reactions.",
           tone: "rose",
-          href: "/couple_module/tools/relationship-patterns-unpacked",
+          href: "/coupletherapy/tools/relationship-patterns-unpacked",
         },
         {
           icon: <Crosshair className="h-5 w-5" />,
           title: "Relationship Boundaries",
           desc: "Explore emotional boundaries and expectations in your relationship.",
           tone: "lavender",
-          href: "/couple_module/tools/redraw-your-circle",
+          href: "/coupletherapy/tools/redraw-your-circle",
         },
         {
           icon: <Heart className="h-5 w-5" />,
           title: "Emotional Needs Mapping",
           desc: "Understand what helps you feel emotionally safe.",
           tone: "sand",
-          href: "/couple_module/tools/what-do-i-need",
+          href: "/coupletherapy/tools/what-do-i-need",
         },
       ],
     },
@@ -595,21 +595,21 @@ function GuidedSeries() {
           title: "The Unsent Letter",
           desc: "Express unresolved feelings in a safe, private space.",
           tone: "sky",
-          href: "/couple_module/tools/the-unsent-letter",
+          href: "/coupletherapy/tools/the-unsent-letter",
         },
         {
           icon: <PenLine className="h-5 w-5" />,
           title: "A Letter to Self",
           desc: "Reflect on your patterns and grow toward healthier responses.",
           tone: "lavender",
-          href: "/couple_module/tools/a-letter-to-self",
+          href: "/coupletherapy/tools/a-letter-to-self",
         },
         {
           icon: <HandHeart className="h-5 w-5" />,
           title: "Repair and Reconnect",
           desc: "Rebuild trust and emotional safety after conflict.",
           tone: "rose",
-          href: "/couple_module/tools/repair-and-reconnect",
+          href: "/coupletherapy/tools/repair-and-reconnect",
         },
       ],
     },
@@ -621,21 +621,21 @@ function GuidedSeries() {
           title: "Growing Apart",
           desc: "Explore signs and solutions when partners drift apart.",
           tone: "sand",
-          href: "/couple_module/relationship-guidance/growing-apart",
+          href: "/coupletherapy/relationship-guidance/growing-apart",
         },
         {
           icon: <FlameIcon className="h-5 w-5" />,
           title: "Why Small Fights Become Big",
           desc: "Understand escalation patterns in couple conflicts.",
           tone: "rose",
-          href: "/couple_module/relationship-guidance/small-fights",
+          href: "/coupletherapy/relationship-guidance/small-fights",
         },
         {
           icon: <UserX className="h-5 w-5" />,
           title: "Feeling Lonely in Love",
           desc: "Navigate emotional loneliness within a loving relationship.",
           tone: "sage",
-          href: "/couple_module/relationship-guidance/lonely-love",
+          href: "/coupletherapy/relationship-guidance/lonely-love",
         },
       ],
     },
@@ -711,28 +711,28 @@ const tools: { icon: React.ReactNode; title: string; desc: string; tone: Tone; h
     title: "Relationship Values Check-In",
     desc: "Track emotional connection and satisfaction together.",
     tone: "rose",
-    href: "/couple_module/tools/know-your-values",
+    href: "/coupletherapy/tools/know-your-values",
   },
   {
     icon: <Star className="h-5 w-5" />,
     title: "Daily Appreciation Practice",
     desc: "Build the habit of noticing and naming the good.",
     tone: "sand",
-    href: "/couple_module/trackers/gratitude-tracker",
+    href: "/coupletherapy/trackers/gratitude-tracker",
   },
   {
     icon: <TrendingUp className="h-5 w-5" />,
     title: "Relationship Connection Tracker",
     desc: "Monitor closeness, intimacy, and warmth over time.",
     tone: "sage",
-    href: "/couple_module/trackers/relationship-connection-tracker",
+    href: "/coupletherapy/trackers/relationship-connection-tracker",
   },
   {
     icon: <Compass className="h-5 w-5" />,
     title: "Shared Relationship Vision",
     desc: "Align your future goals, values, and dreams.",
     tone: "lavender",
-    href: "/couple_module/tools/shared-relationship-vision",
+    href: "/coupletherapy/tools/shared-relationship-vision",
   },
 ];
 
@@ -806,25 +806,25 @@ const resources = [
     icon: <BookOpen className="h-5 w-5" />,
     title: "Articles",
     tone: "sand",
-    href: "/couple_module/resources/relationship/articles",
+    href: "/coupletherapy/resources/relationship/articles",
   },
   {
     icon: <Lightbulb className="h-5 w-5" />,
     title: "Therapist Tips",
     tone: "sky",
-    href: "/couple_module/resources/relationship/tips",
+    href: "/coupletherapy/resources/relationship/tips",
   },
   {
     icon: <HeartHandshake className="h-5 w-5" />,
     title: "Real Couple Stories",
     tone: "lavender",
-    href: "/couple_module/resources/relationship/stories",
+    href: "/coupletherapy/resources/relationship/stories",
   },
   {
     icon: <Brain className="h-5 w-5" />,
     title: "Relationship Myths",
     tone: "sage",
-    href: "/couple_module/resources/relationship/myths",
+    href: "/coupletherapy/resources/relationship/myths",
   },
 ] as const;
 
