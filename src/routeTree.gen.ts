@@ -9,58 +9,55 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CoupletherapyIndexRouteImport } from './routes/coupletherapy.index'
-import { Route as CoupletherapySplatRouteImport } from './routes/coupletherapy.$'
 
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CoupletherapyIndexRoute = CoupletherapyIndexRouteImport.update({
-  id: '/coupletherapy/',
-  path: '/coupletherapy/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoupletherapySplatRoute = CoupletherapySplatRouteImport.update({
-  id: '/coupletherapy/$',
-  path: '/coupletherapy/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/coupletherapy/$': typeof CoupletherapySplatRoute
-  '/coupletherapy/': typeof CoupletherapyIndexRoute
+  '/$': typeof SplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/coupletherapy/$': typeof CoupletherapySplatRoute
-  '/coupletherapy': typeof CoupletherapyIndexRoute
+  '/$': typeof SplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/coupletherapy/$': typeof CoupletherapySplatRoute
-  '/coupletherapy/': typeof CoupletherapyIndexRoute
+  '/$': typeof SplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/coupletherapy/$' | '/coupletherapy/'
+  fullPaths: '/' | '/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/coupletherapy/$' | '/coupletherapy'
-  id: '__root__' | '/' | '/coupletherapy/$' | '/coupletherapy/'
+  to: '/' | '/$'
+  id: '__root__' | '/' | '/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CoupletherapySplatRoute: typeof CoupletherapySplatRoute
-  CoupletherapyIndexRoute: typeof CoupletherapyIndexRoute
+  SplatRoute: typeof SplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -68,27 +65,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/coupletherapy/': {
-      id: '/coupletherapy/'
-      path: '/coupletherapy'
-      fullPath: '/coupletherapy/'
-      preLoaderRoute: typeof CoupletherapyIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/coupletherapy/$': {
-      id: '/coupletherapy/$'
-      path: '/coupletherapy/$'
-      fullPath: '/coupletherapy/$'
-      preLoaderRoute: typeof CoupletherapySplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CoupletherapySplatRoute: CoupletherapySplatRoute,
-  CoupletherapyIndexRoute: CoupletherapyIndexRoute,
+  SplatRoute: SplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
